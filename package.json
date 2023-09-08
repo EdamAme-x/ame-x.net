@@ -1,12 +1,16 @@
 {
   "name": "ame-x.net",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "dev:ssr": "ng run ame-x.net:serve-ssr",
+    "serve:ssr": "node dist/ame-x.net/server/main.js",
+    "build:ssr": "ng build && ng run ame-x.net:server",
+    "prerender": "ng run ame-x.net:prerender"
   },
   "private": true,
   "dependencies": {
@@ -17,7 +21,11 @@
     "@angular/forms": "^16.2.0",
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
+    "@angular/platform-server": "^16.2.0",
     "@angular/router": "^16.2.0",
+    "@nguniversal/express-engine": "^16.2.0",
+    "compression": "^1.7.4",
+    "express": "^4.15.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
@@ -26,7 +34,10 @@
     "@angular-devkit/build-angular": "^16.2.1",
     "@angular/cli": "~16.2.1",
     "@angular/compiler-cli": "^16.2.0",
+    "@nguniversal/builders": "^16.2.0",
+    "@types/express": "^4.17.0",
     "@types/jasmine": "~4.3.0",
+    "@types/node": "^16.11.7",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
