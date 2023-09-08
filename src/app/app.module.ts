@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { HomeComponent } from './home.component';
 import { IconComponent } from './icon/icon.component';
 import { ClientComponent } from './client/client.component';
 import { ScriptComponent } from './client/script/script.component';
@@ -10,7 +10,7 @@ import { AtomComponent } from './icon/atom/atom.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    HomeComponent,
     IconComponent,
     ClientComponent,
     ScriptComponent,
@@ -21,6 +21,6 @@ import { AtomComponent } from './icon/atom/atom.component';
     AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [HomeComponent]
 })
 export class AppModule { }

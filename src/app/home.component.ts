@@ -3,14 +3,14 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
-export class AppComponent { 
+export class HomeComponent { 
 
     VueHtml: any = `
       <button v-on:click="decrement">-</button>
-      {{ num }}
+      <input type="text" v-model="num">
       <button v-on:click="increment">+</button>
     `;
 
