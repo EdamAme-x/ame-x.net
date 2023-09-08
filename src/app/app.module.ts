@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { IconComponent } from './icon/icon.component';
 import { ClientComponent } from './client/client.component';
 import { ScriptComponent } from './client/script/script.component';
+import { AtomComponent } from './icon/atom/atom.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IconComponent,
     ClientComponent,
-    ScriptComponent
+    ScriptComponent,
+    AtomComponent
   ],
   imports: [
     BrowserModule,
