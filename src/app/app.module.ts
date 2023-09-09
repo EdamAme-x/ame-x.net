@@ -7,6 +7,9 @@ import { IconComponent } from './icon/icon.component';
 import { ClientComponent } from './client/client.component';
 import { ScriptComponent } from './client/script/script.component';
 import { AtomComponent } from './icon/atom/atom.component';
+import { LayoutComponent } from './layout/layout.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { AtomComponent } from './icon/atom/atom.component';
     IconComponent,
     ClientComponent,
     ScriptComponent,
-    AtomComponent
+    AtomComponent,
+    LayoutComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

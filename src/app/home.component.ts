@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { HashService } from './utils/hash.service';
 
 @Component({
   selector: 'root',
@@ -7,31 +7,9 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent { 
+  constructor(private HashService: HashService) { }
 
-    VueHtml: any = `
-      <button v-on:click="decrement">-</button>
-      <input type="text" v-model="num">
-      <button v-on:click="increment">+</button>
-    `;
-
-    VueScript: string = `
-      new Vue({
-        el: '#vue-test',
-        data: {
-          num: 0
-        },
-        methods: {
-          increment() {
-            this.num++
-          },
-          decrement() {
-            this.num--
-          }
-        }
-      })
-    `;
-
-    constructor(private sanitizer: DomSanitizer) {
-      this.VueHtml = sanitizer.bypassSecurityTrustHtml(this.VueHtml);
-    }
+  ngOnInit() {
+    console.log(this.HashService.PowerHash('test'))
+  }
 }
