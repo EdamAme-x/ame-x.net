@@ -29,4 +29,5 @@ import { FooterComponent } from './layout/footer/footer.component';
   providers: [],
   bootstrap: [HomeComponent]
 })
+
 export class AppModule { }
