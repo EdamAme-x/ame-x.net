@@ -1,0 +1,32 @@
+header {
+    user-select: none;
+    .text-shadow-x {
+        text-shadow: 0 0 1px #fff;
+        @apply scale-[1.025];
+    }
+
+    .box-shadow-b {
+        box-shadow: 0 0 3px #fff;
+    }
+
+    .space-x {
+        animation-name: space_x;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+}
+
+@keyframes space_x {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(15px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

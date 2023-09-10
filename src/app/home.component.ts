@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HashService } from './utils/hash.service';
 
 @Component({
   selector: 'root',
@@ -7,9 +6,9 @@ import { HashService } from './utils/hash.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent { 
-  constructor(private HashService: HashService) { }
+  constructor() { }
 
   ngOnInit() {
-    console.log(this.HashService.PowerHash('test'))
+    
   }
 }

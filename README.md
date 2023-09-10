@@ -24,9 +24,9 @@ Component names are described in Pascal case.
 
 /app/{...a}/{...b} => {...a}.upperHead + {...b}.upperHead
 
-On Atomic Design
 
 <!--
+On Atomic Design
 hello !!
 <Icon size="100px" />
 <Client>
