@@ -17,7 +17,7 @@
     </div>
 </div>
 
-<div [class]="(isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none') + 'transition duration-[250ms]'">
+<div [class]="(isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none') + 'transition duration-[250ms] relative z-[15]'">
     <div class="fixed bottom-10 right-10">
         <div (click)="toPage('/home')"
             class="bg-red-500 absolute bottom-[50px] right-[125px] w-[50px] h-[50px] box-shadow-b rounded-full px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-white-300 focus-visible:ring active:text-white-700 md:text-base">

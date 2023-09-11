@@ -1,6 +1,8 @@
 # Ame-x.net
 Profile Site
 
+Deploy: [ame-x-net.vercel.app](ame-x-net.vercel.app)
+
 ## Uses
  - Angular
  - Express
