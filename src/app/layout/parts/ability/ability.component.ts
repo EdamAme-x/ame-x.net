@@ -36,8 +36,6 @@ export class AbilityComponent {
             let width = entry.borderBoxSize[0].inlineSize;
             let height = entry.borderBoxSize[0].blockSize;
 
-            console.log(\`Card \${cardIndex} - Width: \${width}px, Height: \${height}px\`);
-
             if (cardIndex >= 0) {
                 overlay.children[cardIndex].children[0].style.width = \`\${width}px\`;
                 overlay.children[cardIndex].children[0].style.height = \`\${height}px\`;
