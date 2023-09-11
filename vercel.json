@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "public": true,
+  "name": "ame-x.net",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api"
+    }
+  ],
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "dist/ame-x.net/browser/**"
+    }
+  }
+}

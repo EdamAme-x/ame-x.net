@@ -4,13 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build-dev": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run ame-x.net:serve-ssr",
     "serve:ssr": "node dist/ame-x.net/server/main.js",
     "build:ssr": "ng build && ng run ame-x.net:server",
-    "prerender": "ng run ame-x.net:prerender"
+    "prerender": "ng run ame-x.net:prerender",
+    "vercel-build": "npm run build:ssr"
   },
   "private": true,
   "dependencies": {
