@@ -60,6 +60,10 @@ export class AbilityComponent {
 
   ScriptCode: SafeHtml;
 
+  toPage(page: string) {
+    window.location.href = page;
+  }
+
   constructor(private sanitizer: DomSanitizer) {
     this.ScriptCode = this.sanitizer.bypassSecurityTrustHtml(this.RawCode);
   }
