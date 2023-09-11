@@ -10,6 +10,7 @@ import { AtomComponent } from './icon/atom/atom.component';
 import { LayoutComponent } from './layout/layout.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { AbilityComponent } from './layout/parts/ability/ability.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FooterComponent } from './layout/footer/footer.component';
     AtomComponent,
     LayoutComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AbilityComponent
   ],
   imports: [
     BrowserModule,
