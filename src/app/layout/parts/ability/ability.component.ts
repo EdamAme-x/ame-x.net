@@ -26,7 +26,7 @@ export class AbilityComponent {
         const overlayCta = document.createElement("div");
         overlayCta.classList.add("cta");
         overlayCta.innerHTML = ctaEl.outerHTML;
-        overlayCta.setAttribute("aria-hidden", true);
+        // overlayCta.setAttribute("aria-hidden", true);
         overlayCard.append(overlayCta);
     };
 
