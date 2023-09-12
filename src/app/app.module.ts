@@ -11,6 +11,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { AbilityComponent } from './layout/parts/ability/ability.component';
+import { RocketComponent } from './layout/parts/rocket/rocket.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AbilityComponent } from './layout/parts/ability/ability.component';
     LayoutComponent,
     HeaderComponent,
     FooterComponent,
-    AbilityComponent
+    AbilityComponent,
+    RocketComponent
   ],
   imports: [
     BrowserModule,
