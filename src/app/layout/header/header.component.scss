@@ -11,6 +11,10 @@ header {
     }
 }
 
+.menu-x {
+    transition: opacity 1s;
+}
+
 .space-x {
     animation-name: space_x;
     animation-duration: 1s;

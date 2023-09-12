@@ -8,7 +8,7 @@
     </div>
 </header>
 
-<div (click)="changeMenu()" class="select-none">
+<div (click)="changeMenu()" [class]="'select-none menu-x opacity-' + menuOpacity">
     <img src="assets/fishing.webp" alt="Fishing" width="150" height="150" class="box-shadow-b fixed bottom-5 right-2 z-10
         mr-2 rounded-full px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300
         focus-visible:ring active:text-white-700 md:text-base space-x" />
