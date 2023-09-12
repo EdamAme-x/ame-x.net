@@ -7,65 +7,73 @@ import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { AppServerModule } from './src/main.server';
 
-import { kv } from "@vercel/kv";
+import * as kv from './kv';
 
 export function app(): express.Express {
   const server = express();
   const distFolder = join(process.cwd(), 'dist/ame-x.net/browser');
-  const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
+  const indexHtml = existsSync(join(distFolder, 'index.original.html'))
+    ? 'index.original.html'
+    : 'index';
 
-  server.engine('html', ngExpressEngine({
-    bootstrap: AppServerModule
-  }));
+  server.engine(
+    'html',
+    ngExpressEngine({
+      bootstrap: AppServerModule,
+    })
+  );
 
   server.set('view engine', 'html');
   server.set('views', distFolder);
 
-  server.get('*.*', express.static(distFolder, {
-    maxAge: '1y'
-  }));
+  server.get(
+    '*.*',
+    express.static(distFolder, {
+      maxAge: '1y',
+    })
+  );
 
   server.get('/model/:api_name', async (req, res) => {
     const model = req.params.api_name;
-    console.log("req: " + model);
+    console.log('req: ' + model);
     //  process.env.ENV_KEY
     if (model === 'post-fly') {
-      // add
       const fried_num: string | null = await kv.get('_fried');
 
       if (!fried_num) {
-        await kv.set('_fried', 1);
-      }else {
-        await kv.set('_fried', parseInt(fried_num) + 1);
+        await kv.set('_fried', '1');
+      } else {
+        await kv.set('_fried', (parseInt(fried_num) + 1).toString());
       }
 
       res.json({
         status: '200',
         message: 'OK',
-      })
-      
-    }else if (model === 'get-fly') {
-      
+      });
+    } else if (model === 'get-fly') {
       const fried_num = await kv.get('_fried');
 
-      return res.json({
+      res.json({
         status: '200',
         message: 'OK',
-        data: fried_num
-      })
+        data: fried_num,
+      });
+    } else {
+      res.json({
+        status: '502',
+        message: 'Not Found API',
+      });
     }
-
-    return res.json({
-      status: '502',
-      message: 'Not Found API'
-    })
-  })
+  });
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
     res.setHeader('x-powered-by', 'Next.js 99999999;version:9999999');
     res.setHeader('x-development-by', '@amex2189');
-    res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
+    res.render(indexHtml, {
+      req,
+      providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }],
+    });
   });
 
   return server;
@@ -86,7 +94,7 @@ function run(): void {
 // The below code is to ensure that the server is run only when not requiring the bundle.
 declare const __non_webpack_require__: NodeRequire;
 const mainModule = __non_webpack_require__.main;
-const moduleFilename = mainModule && mainModule.filename || '';
+const moduleFilename = (mainModule && mainModule.filename) || '';
 if (moduleFilename === __filename || moduleFilename.includes('iisnode')) {
   run();
 }

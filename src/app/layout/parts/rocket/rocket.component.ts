@@ -16,12 +16,16 @@ export class RocketComponent {
   }
 
   ngOnInit() {
-    if (typeof window === 'undefined') {
+
+    // @ts-ignore
+    if (typeof window === 'undefined' || window._after_fried_get === "end") {
       return;
     }
 
     fetch('/model/get-fly').then(res => res.json()).then(d => {
       this.fired = parseInt(d.data);
+      //@ts-ignore
+      window._after_fried_get = "end";
     })
   }
 }
