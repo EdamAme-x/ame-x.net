@@ -5,6 +5,10 @@ import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
+
+//@ts-ignore
+import compression from 'compression';
+
 import { AppServerModule } from './src/main.server';
 
 import * as kv from './kv';
@@ -22,6 +26,8 @@ export function app(): express.Express {
       bootstrap: AppServerModule,
     })
   );
+
+  server.use(compression({level: 5}));
 
   server.set('view engine', 'html');
   server.set('views', distFolder);
@@ -50,6 +56,7 @@ export function app(): express.Express {
         status: '200',
         message: 'OK',
       });
+
     } else if (model === 'get-fly') {
       const fried_num = await kv.get('_fried');
 
