@@ -7,13 +7,13 @@ import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { AppServerModule } from './src/main.server';
 
-// The Express app is exported so that it can be used by serverless Functions.
+import { kv } from "@vercel/kv";
+
 export function app(): express.Express {
   const server = express();
   const distFolder = join(process.cwd(), 'dist/ame-x.net/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
 
-  // Our Universal express-engine (found @ https://github.com/angular/universal/tree/main/modules/express-engine)
   server.engine('html', ngExpressEngine({
     bootstrap: AppServerModule
   }));
@@ -21,12 +21,45 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', distFolder);
 
-  // Example Express Rest API endpoints
-  // server.get('/api/**', (req, res) => { });
-  // Serve static files from /browser
   server.get('*.*', express.static(distFolder, {
     maxAge: '1y'
   }));
+
+  server.get('/model/:api_name', async (req, res) => {
+    const model = req.params.api_name;
+    console.log("req: " + model);
+    //  process.env.ENV_KEY
+    if (model === 'post-fly') {
+      // add
+      const fried_num: string | null = await kv.get('_fried');
+
+      if (!fried_num) {
+        await kv.set('_fried', 1);
+      }else {
+        await kv.set('_fried', parseInt(fried_num) + 1);
+      }
+
+      res.json({
+        status: '200',
+        message: 'OK',
+      })
+      
+    }else if (model === 'get-fly') {
+      
+      const fried_num = await kv.get('_fried');
+
+      return res.json({
+        status: '200',
+        message: 'OK',
+        data: fried_num
+      })
+    }
+
+    return res.json({
+      status: '502',
+      message: 'Not Found API'
+    })
+  })
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {

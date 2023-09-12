@@ -40,3 +40,8 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# ENV
+.env.local
+.env.development.local
+.vercel
