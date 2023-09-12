@@ -8,7 +8,7 @@ const envs = require('dotenv').config({
 
 
 export async function set(key: string, value: string): Promise<void> {
-    await fetch(`${envs["KV_REST_API_URL"]}/set/${key}/${value}`, {
+    fetch(`${envs["KV_REST_API_URL"]}/set/${key}/${value}`, {
         method: 'POST',
         headers: {
             Authorization: "Bearer " + envs["KV_REST_API_TOKEN"]
