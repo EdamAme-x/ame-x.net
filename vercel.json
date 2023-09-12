@@ -10,8 +10,7 @@
   ],
   "functions": {
     "api/index.js": {
-      "includeFiles": "dist/ame-x.net/browser/**",
-      "maxDuration": 5000
+      "includeFiles": "dist/ame-x.net/browser/**"
     }
   }
 }
