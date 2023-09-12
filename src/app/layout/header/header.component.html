@@ -1,7 +1,7 @@
 <header class="flex justify-between w-screen h-[50px] px-1 bg-[#FFFFFF10] fixed top-0 z-[15]">
     <div class="flex">
-        <img src="assets/rocket.png" class="w-[50px] h-[50px] scale-150 logo-x" alt=" logo-rocket" srcset="assets/rocket.png"
-            width="50" height="50" />
+        <img src="assets/rocket.png" class="w-[50px] h-[50px] scale-150 logo-x" alt=" logo-rocket"
+            srcset="assets/rocket.webp" width="50" height="50" />
         <div class="inline font-bold font-mono text-2xl h-[50px] flex items-center">
             Ame-<span class="text-shadow-x" [innerText]="'𝕏'"></span>
         </div>
@@ -9,7 +9,7 @@
 </header>
 
 <div (click)="changeMenu()" class="select-none">
-    <img src="assets/fishing.png" alt="Fishing" width="150" height="150" class="box-shadow-b fixed bottom-5 right-2 z-10
+    <img src="assets/fishing.webp" alt="Fishing" width="150" height="150" class="box-shadow-b fixed bottom-5 right-2 z-10
         mr-2 rounded-full px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300
         focus-visible:ring active:text-white-700 md:text-base space-x" />
     <div class="fixed bottom-10 right-10 space-x-2 z-[11]">
@@ -17,7 +17,8 @@
     </div>
 </div>
 
-<div [class]="(isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none') + 'transition duration-[250ms] relative z-[15]'">
+<div
+    [class]="(isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none') + 'transition duration-[250ms] relative z-[15]'">
     <div class="fixed bottom-10 right-10">
         <div (click)="toPage('/home')"
             class="bg-red-500 absolute bottom-[50px] right-[125px] w-[50px] h-[50px] box-shadow-b rounded-full px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-white-300 focus-visible:ring active:text-white-700 md:text-base">
