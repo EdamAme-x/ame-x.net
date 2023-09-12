@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 const path = require('path');
  
-const envs = require('dotenv').config({ 
+const envs = process.env["KV_REST_API_URL"] ? process.env : require('dotenv').config({ 
   path: path.resolve(__dirname, '../../../.env.development.local') 
 }).parsed;
 
