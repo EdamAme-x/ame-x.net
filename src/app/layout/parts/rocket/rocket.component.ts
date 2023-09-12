@@ -24,8 +24,12 @@ export class RocketComponent {
 
     fetch('/model/get-fly').then(res => res.json()).then(d => {
       this.fired = parseInt(d.data);
+      fetch('/model/post-fly').then(() => {
+        this.fired++;
+      });
       //@ts-ignore
       window._after_fried_get = "end";
     })
   }
+
 }
