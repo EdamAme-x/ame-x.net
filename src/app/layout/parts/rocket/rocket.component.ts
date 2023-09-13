@@ -20,7 +20,7 @@ export class RocketComponent {
   supply() {
     let endWithPrefix = 'th';
 
-    if (this.fired % 10 === 0) {
+    if (this.fired % 10 === 0 && this.fired % 100 !== 0) {
       //@ts-ignore
       new window.swal({
         title: `
@@ -28,7 +28,7 @@ export class RocketComponent {
         Congratulations!🎊`,
         icon: 'success',
       });
-    } else if (this.fired % 100 == 0) {
+    } else if (this.fired % 100 === 0) {
       //@ts-ignore
       new window.swal({
         title: `
