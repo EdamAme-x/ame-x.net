@@ -1,0 +1,22 @@
+<h4 class="text-lg font-mono my-5 text-center">Technology used on this site.</h4>
+<!-- 
+    Angular
+    Express
+    Node.js
+    TypeScript
+    TailwindCSS
+    Sass
+    VercelKV
+-->
+<div class="flex flex-wrap">
+    <div *ngFor="let tech of techs" class="mx-5">
+        <div class="w-full text-center mb-1">
+            {{ tech.name }}
+        </div>
+        <div class="w-full flex justify-center">
+            <img [src]="tech.icon ? tech.icon : 'https://icongr.am/devicon/codeigniter-plain.svg?size=128&color=currentColor'"
+            [alt]="tech.name" width="50" height="50" 
+            [style]="'filter: ' + ( tech.name === 'VercelKV' ? 'brightness(1.75);' : '')"/>
+        </div>
+    </div>
+</div>

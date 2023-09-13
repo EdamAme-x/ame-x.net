@@ -18,12 +18,24 @@ export class RocketComponent {
   }
 
   supply() {
+    let endWithPrefix = 'th';
+
     if (this.fired % 10 === 0) {
       //@ts-ignore
       new window.swal({
         title: `
-        You are the one who fired the ${this.fired}th rocket! 
+        You are the one who fired the ${this.fired}${endWithPrefix} rocket! 
         Congratulations!🎊`,
+        icon: 'success',
+      });
+    } else if (this.fired % 100 == 0) {
+      //@ts-ignore
+      new window.swal({
+        title: `
+        You are the one who fired the ${this.fired}${endWithPrefix} rocket! 
+        Congratulations!🎊
+        Show @amex2189 a screencap of this screen and see.
+        `,
         icon: 'success',
       });
     }

@@ -14,6 +14,9 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { AbilityComponent } from './layout/parts/ability/ability.component';
 import { RocketComponent } from './layout/parts/rocket/rocket.component';
 import { LinksComponent } from './layout/parts/links/links.component';
+import { TechsComponent } from './layout/parts/techs/techs.component';
+
+// Module
 import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
@@ -28,7 +31,8 @@ import { MatIconModule } from '@angular/material/icon';
     FooterComponent,
     AbilityComponent,
     RocketComponent,
-    LinksComponent
+    LinksComponent,
+    TechsComponent
   ],
   imports: [
     BrowserModule,
