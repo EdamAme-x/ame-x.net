@@ -8,10 +8,25 @@ import { Component } from '@angular/core';
 export class RocketComponent {
   fired: number = 0;
 
-  firing() {
+  async firing() {
     // add & refresh fried
-    fetch('/model/post-fly?key=' + Math.random().toString(16), {});
+    await fetch('/model/post-fly?key=' + Math.random().toString(16), {});
+
     this.fired++;
+
+    this.supply();
+  }
+
+  supply() {
+    if (this.fired % 10 === 0) {
+      //@ts-ignore
+      new window.swal({
+        title: `
+        You are the one who fired the ${this.fired}th rocket! 
+        Congratulations!🎊`,
+        icon: 'success',
+      });
+    }
   }
 
   ngOnInit() {
@@ -20,12 +35,33 @@ export class RocketComponent {
       return;
     }
 
+    //@ts-ignore
+    if (!window.swal) {
+      // @ts-ignore
+      Function(`
+        import("https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/+esm").then(
+          (x) => {
+            window.swal = x.default;
+          }
+        )
+
+        document.head.innerHTML += \`
+        <style swal-style>
+          .swal2-title {
+            font-size: 1rem;
+          }        
+        </style>
+        \`
+      `)();
+    }
+
     fetch('/model/get-fly?key=' + Math.random().toString(16), {})
       .then((res) => res.json())
       .then((d) => {
         this.fired = parseInt(d.data);
         fetch('/model/post-fly?key=' + Math.random().toString(16)).then(() => {
           this.fired++;
+          this.supply();
         });
         //@ts-ignore
         window._after_fried_get = 'end';

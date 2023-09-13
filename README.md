@@ -17,6 +17,8 @@ Deploy: [ame-x-net.vercel.app](ame-x-net.vercel.app)
  - Open-Graph
  - SSR
  - GoogleAnalytics
+ - MaterialIcon
+ - VercelKV
 
 ## Rules
 Component names are described in Pascal case.
