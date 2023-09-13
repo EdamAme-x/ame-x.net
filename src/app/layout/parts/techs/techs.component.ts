@@ -31,7 +31,7 @@ export class TechsComponent {
       icon: 'https://www.svgrepo.com/show/374118/tailwind.svg'
     },
     {
-      name: 'Sass',
+      name: 'Scss',
       icon: 'https://icongr.am/devicon/sass-original.svg?size=128&color=currentColor'
     },
     {
