@@ -2,7 +2,10 @@
     <mat-icon class="scale-[2] mb-5">link</mat-icon>
     <div class="flex flex-wrap">
         <div *ngFor="let link of links">
-            <a [href]="link.url" title="{{ link.title }}" target="_blank" [innerHTML]="link.raw" class="w-[100px]"></a>
+            <div class="mx-5">
+                <a [href]="link.url" title="{{ link.title }}" target="_blank" [innerHTML]="link.raw"
+                    class="w-[100px]"></a>
+            </div>
         </div>
     </div>
 </div>
