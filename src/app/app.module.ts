@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+// @ts-ignore
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +13,8 @@ import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { AbilityComponent } from './layout/parts/ability/ability.component';
 import { RocketComponent } from './layout/parts/rocket/rocket.component';
+import { LinksComponent } from './layout/parts/links/links.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -24,11 +27,13 @@ import { RocketComponent } from './layout/parts/rocket/rocket.component';
     HeaderComponent,
     FooterComponent,
     AbilityComponent,
-    RocketComponent
+    RocketComponent,
+    LinksComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [HomeComponent]

@@ -1,3 +1,4 @@
+//@ts-ignore
 import fetch from 'node-fetch';
 
 const path = require('path');
@@ -13,9 +14,9 @@ export async function set(key: string, value: string): Promise<void> {
         headers: {
             Authorization: "Bearer " + envs["KV_REST_API_TOKEN"]
         }
-    }).then((res) => {
+    }).then(() => {
         console.log("VercelKV Success");
-    }).catch((err) => {
+    }).catch((err: string) => {
         console.log("VercelKV Error: " + err);
     });
 }
