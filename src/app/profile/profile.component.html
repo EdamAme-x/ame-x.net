@@ -1,0 +1,23 @@
+<div class="min-h-[80vh]">
+    <div class="flex justify-center mt-5">
+        <Icon size="100px" class="absolute z-[3] mt-[10px] opacity-[0.95]" />
+        <IconAtom style="width: 125px; height: 125px;position: relative;z-index: 2;" />
+    </div>
+    <div class="text-center mt-5">
+        <h1 class="text-4xl font-mono">Ame_x</h1>
+        <h2 class="text-md font-mono text-gray-300 mt-2">@amex2189</h2>
+    </div>
+    <div class="mt-5 flex justify-center flex-wrap">
+        <div class="flex flex-col items-center">
+            <h3 class="text-3xl font-mono">Language</h3>
+            <div *ngFor="let lang of skill_Language" class="flex flex-col items-center">
+                <h4 class="text-lg font-mono">{{ lang["name"] }}</h4>
+                <img width="50" height="50" [src]="lang['icon'] ? lang['icon'] : 'https://icongr.am/devicon/javascript-plain.svg?size=128&color=currentColor'"
+                    class="" [alt]="lang['name']">
+                <!-- <p>{{ lang["level"] }}</p> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<canvas id='background-x'></canvas>

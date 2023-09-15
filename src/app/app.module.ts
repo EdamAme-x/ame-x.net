@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './home.component';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 import { IconComponent } from './icon/icon.component';
 import { ClientComponent } from './client/client.component';
 import { ScriptComponent } from './client/script/script.component';
@@ -15,12 +16,15 @@ import { AbilityComponent } from './layout/parts/ability/ability.component';
 import { RocketComponent } from './layout/parts/rocket/rocket.component';
 import { LinksComponent } from './layout/parts/links/links.component';
 import { TechsComponent } from './layout/parts/techs/techs.component';
+import { ProfileComponent } from './profile/profile.component';
 
 // Module
 import { MatIconModule } from '@angular/material/icon';
+import { SkillService } from './info/skill.service';
 
 @NgModule({
   declarations: [
+    AppComponent,
     HomeComponent,
     IconComponent,
     ClientComponent,
@@ -32,15 +36,18 @@ import { MatIconModule } from '@angular/material/icon';
     AbilityComponent,
     RocketComponent,
     LinksComponent,
-    TechsComponent
+    TechsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatIconModule
   ],
-  providers: [],
-  bootstrap: [HomeComponent]
+  providers: [
+    SkillService
+  ],
+  bootstrap: [AppComponent]
 })
 
 export class AppModule { }
