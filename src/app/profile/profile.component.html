@@ -7,17 +7,49 @@
         <h1 class="text-4xl font-mono">Ame_x</h1>
         <h2 class="text-md font-mono text-gray-300 mt-2">@amex2189</h2>
     </div>
-    <div class="mt-5 flex justify-center flex-wrap">
+    <div class="mt-5 flex justify-center flex-wrap skills-x">
         <div class="flex flex-col items-center">
-            <h3 class="text-3xl font-mono">Language</h3>
             <div *ngFor="let lang of skill_Language" class="flex flex-col items-center">
-                <h4 class="text-lg font-mono">{{ lang["name"] }}</h4>
-                <img width="50" height="50" [src]="lang['icon'] ? lang['icon'] : 'https://icongr.am/devicon/javascript-plain.svg?size=128&color=currentColor'"
-                    class="" [alt]="lang['name']">
-                <!-- <p>{{ lang["level"] }}</p> -->
+                <div [class]="'c' + lang['level'].toString() + ' p50'">
+                    <span class="flex flex-col items-center w-full h-full circle-x">
+                        <h4 class="text-sm text-center mt-5 pt-1 text-gray-700 font-mono">{{ lang["name"] }}</h4>
+                        <img width="50" height="50" [class]="haveIinvert(lang) + ' icon-x'"
+                            [src]="lang['icon'] ? lang['icon'] : 'https://icongr.am/devicon/javascript-plain.svg?size=128&color=currentColor'"
+                            [alt]="lang['name']">
+                    </span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col items-center">
+            <div *ngFor="let framework of skill_Framework_Library" class="flex flex-col items-center">
+                <h4 class="text-lg font-mono">{{ framework["name"] }}</h4>
+                <img width="50" height="50" [class]="haveIinvert(framework) + ' icon-x'" [src]="framework['icon']"
+                    [alt]="framework['name']">
+            </div>
+        </div>
+        <div class="flex flex-col items-center">
+            <div *ngFor="let framework of skill_CSS_Framework" class="flex flex-col items-center">
+                <h4 class="text-lg font-mono">{{ framework["name"] }}</h4>
+                <img width="50" height="50" [class]="haveIinvert(framework) + ' icon-x'" [src]="framework['icon']"
+                    [alt]="framework['name']">
+            </div>
+        </div>
+        <div class="flex flex-col items-center">
+            <div *ngFor="let server of skill_Server" class="flex flex-col items-center">
+                <h4 class="text-lg font-mono">{{ server["name"] }}</h4>
+                <img width="50" height="50" [class]="haveIinvert(server) + ' icon-x'" [src]="server['icon']"
+                    [alt]="server['name']">
+            </div>
+        </div>
+        <div class="flex flex-col items-center">
+            <div *ngFor="let others of skill_Others" class="flex flex-col items-center">
+                <h4 class="text-lg font-mono">{{ others["name"] }}</h4>
+                <img width="50" height="50" [class]="haveIinvert(others) + ' icon-x'" [src]="others['icon']"
+                    [alt]="others['name']">
             </div>
         </div>
     </div>
-</div>
-
-<canvas id='background-x'></canvas>

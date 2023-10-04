@@ -20,7 +20,13 @@ export class ProfileComponent {
     }
   }
 
-  constructor(private skillService: SkillService) {}
+  constructor(
+    private skillService: SkillService
+    ) {}
+
+  haveIinvert(lang: any): string | undefined {
+    return this.skillService.haveIinvert(lang);
+  }
 
   isInClient: boolean = false;
 
@@ -29,6 +35,7 @@ export class ProfileComponent {
   skill_Language: childSkills = this.skills_all['Language'];
   skill_Framework_Library: childSkills = this.skills_all['Framework-Library'];
   skill_CSS_Framework: childSkills = this.skills_all['CSS-Framework-Library'];
+  skill_Server: childSkills = this.skills_all['Server'];
   skill_Others: childSkills = this.skills_all['Others'];
 
 }

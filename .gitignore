@@ -45,3 +45,7 @@ Thumbs.db
 .env.local
 .env.development.local
 .vercel
+
+# SSH
+pokky
+pokky.hub
