@@ -38,4 +38,5 @@ export class ProfileComponent {
   skill_Server: childSkills = this.skills_all['Server'];
   skill_Others: childSkills = this.skills_all['Others'];
 
+  skills: childSkills = this.skill_Language.concat(this.skill_Framework_Library, this.skill_CSS_Framework, this.skill_Server, this.skill_Others);
 }

@@ -5,9 +5,7 @@ interface Skill {
   name: string;
   level: number;
   icon?: string; // アイコン
-  config?: {
-    invert?: string;
-  };
+  config?: any;
   case?: string; // 実際の事例(Github)
 }
 
@@ -101,7 +99,7 @@ export class SkillService {
       {
         name: 'Nuxt.js',
         level: 100,
-        icon: 'todo-x'
+        icon: 'https://www.svgrepo.com/show/354131/nuxt-icon.svg',
       },
       {
         name: 'Fresh',
@@ -131,12 +129,12 @@ export class SkillService {
       {
         name: 'Solid',
         level: 100,
-        icon: 'todo-x'
+        icon: 'https://avatars.githubusercontent.com/u/79226042?s=280&v=4',
       },
       {
         name: 'Lit',
         level: 100,
-        icon: 'todo-x'
+        icon: 'https://pbs.twimg.com/media/F7mGQz6awAAzO_K?format=png&name=small',
       },
       {
         name: 'jQuery',
@@ -200,7 +198,7 @@ export class SkillService {
         icon: 'https://www.svgrepo.com/show/481446/oak-leaf-1.svg',
         config: {
           invert: 'invert-x',
-        }
+        },
       },
       {
         name: 'Express',
