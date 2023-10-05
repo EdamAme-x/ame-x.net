@@ -61,6 +61,11 @@ export class SkillService {
         level: 'Pro',
         icon: 'https://www.svgrepo.com/show/373969/php2.svg',
       },
+      {
+        name: 'Zig',
+        level: 'Pro',
+        icon: 'https://avatars.githubusercontent.com/u/27973237?s=160&v=4',
+      }
     ],
     'Framework-Library': [
       {
