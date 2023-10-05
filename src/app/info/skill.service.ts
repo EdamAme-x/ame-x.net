@@ -65,7 +65,7 @@ export class SkillService {
         name: 'Zig',
         level: 'Pro',
         icon: 'https://avatars.githubusercontent.com/u/27973237?s=160&v=4',
-      }
+      },
     ],
     'Framework-Library': [
       {
@@ -92,6 +92,11 @@ export class SkillService {
         name: 'VanJS',
         level: 'Pro',
         icon: 'https://www.svgrepo.com/show/407493/soft-ice-cream.svg',
+      },
+      {
+        name: 'Naxt.js',
+        level: 'Pro',
+        icon: 'https://github.com/EdamAme-x/Naxt.js/raw/main/assets/icon.png',
       },
       {
         name: 'Next.js',
@@ -145,14 +150,6 @@ export class SkillService {
         name: 'jQuery',
         level: 'Pro',
         icon: 'https://www.svgrepo.com/show/378431/jquery-fill.svg',
-        config: {
-          invert: 'invert-x',
-        },
-      },
-      {
-        name: 'And more...',
-        level: 'Pro',
-        icon: 'https://www.svgrepo.com/show/381623/elements.svg',
         config: {
           invert: 'invert-x',
         },
@@ -251,10 +248,7 @@ export class SkillService {
       {
         name: 'VStudio',
         level: 'Pro',
-        icon: 'https://www.svgrepo.com/show/443534/brand-visualstudio.svg',
-        config: {
-          invert: 'invert-x',
-        },
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Visual_Studio_Icon_2019.svg/1200px-Visual_Studio_Icon_2019.svg.png',
       },
       {
         name: 'CRX',
@@ -289,6 +283,14 @@ export class SkillService {
         name: 'Bash / Shell',
         level: 'Pro',
         icon: 'https://www.svgrepo.com/show/514087/console.svg',
+        config: {
+          invert: 'invert-x',
+        },
+      },
+      {
+        name: 'And more...',
+        level: 'Pro',
+        icon: 'https://www.svgrepo.com/show/381623/elements.svg',
         config: {
           invert: 'invert-x',
         },
@@ -339,8 +341,8 @@ export class SkillService {
   }[] = [
     { name: 'Pro', desc: 'I can make mighty apps, only individuals.' },
     { name: 'Specialty', desc: 'I have varied knowledge of it.' },
-    { name: 'One\'s forte', desc: 'A good application can be built.' },
+    { name: "One's forte", desc: 'A good application can be built.' },
     { name: 'Reasonably good', desc: 'I have a little knowledge and skill.' },
-    { name: 'Beginner', desc: 'I\'m a novice at it.' },
+    { name: 'Beginner', desc: "I'm a novice at it." },
   ];
 }
