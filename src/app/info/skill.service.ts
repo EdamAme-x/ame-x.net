@@ -149,10 +149,7 @@ export class SkillService {
       {
         name: 'jQuery',
         level: 'Pro',
-        icon: 'https://www.svgrepo.com/show/378431/jquery-fill.svg',
-        config: {
-          invert: 'invert-x',
-        },
+        icon: 'https://static-00.iconduck.com/assets.00/jquery-icon-2018x2048-nrk2gcih.png',
       },
     ],
     'CSS-Framework-Library': [
