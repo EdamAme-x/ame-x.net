@@ -233,7 +233,7 @@ export class SkillService {
         icon: 'https://bun.sh/favicon.ico',
       },
       {
-        name: 'PackageManeger',
+        name: 'PackageManager',
         level: 'Pro',
         icon: 'https://www.svgrepo.com/show/505953/package.svg',
         config: {
