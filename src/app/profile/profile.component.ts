@@ -31,7 +31,8 @@ export class ProfileComponent {
   isInClient: boolean = false;
 
   skills_all: {[key: string]: any[]} = this.skillService.getSkills();
-  
+  defines = this.skillService.defines;
+
   skill_Language: childSkills = this.skills_all['Language'];
   skill_Framework_Library: childSkills = this.skills_all['Framework-Library'];
   skill_CSS_Framework: childSkills = this.skills_all['CSS-Framework-Library'];
