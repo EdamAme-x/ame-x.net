@@ -9,12 +9,15 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 export class AbilityComponent {
   RawCode = `
 <script>
-  window.onload = () => {
+function lite() {
     const cardsContainer = document.querySelector("[cards-raw] .cards");
     const cards = Array.from(document.querySelectorAll("[cards-raw] .card"));
     const overlay = document.querySelector("[cards-raw] .overlay");
 
     const applyOverlayMask = (e) => {
+        if (!document.querySelector(".main__cards")) {
+          return 0;
+        }
         const overlayEl = e.currentTarget;
         const x = e.pageX - cardsContainer.offsetLeft;
         const y = e.pageY - cardsContainer.offsetTop;
@@ -54,6 +57,10 @@ export class AbilityComponent {
 
     cards.forEach(initOverlayCard);
     document.body.addEventListener("pointermove", applyOverlayMask);
+}
+
+window.onload = () => {
+    lite();
 }
 </script>
   `;
