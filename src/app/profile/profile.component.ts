@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { SkillService } from '../info/skill.service';
 
 type childSkills = {
-  [key: string]: string | number
+  [key: string]: any;
 }[];
 
 @Component({
@@ -20,9 +20,7 @@ export class ProfileComponent {
     }
   }
 
-  constructor(
-    private skillService: SkillService
-    ) {}
+  constructor(private skillService: SkillService) {}
 
   haveIinvert(lang: any): string | undefined {
     return this.skillService.haveIinvert(lang);
@@ -30,7 +28,7 @@ export class ProfileComponent {
 
   isInClient: boolean = false;
 
-  skills_all: {[key: string]: any[]} = this.skillService.getSkills();
+  skills_all: { [key: string]: any[] } = this.skillService.getSkills();
   defines = this.skillService.defines;
 
   skill_Language: childSkills = this.skills_all['Language'];
@@ -39,5 +37,36 @@ export class ProfileComponent {
   skill_Server: childSkills = this.skills_all['Server'];
   skill_Others: childSkills = this.skills_all['Others'];
 
-  skills: childSkills = this.skill_Language.concat(this.skill_Framework_Library, this.skill_CSS_Framework, this.skill_Server, this.skill_Others);
+  skills: childSkills = this.skill_Language.concat(
+    this.skill_Framework_Library,
+    this.skill_CSS_Framework,
+    this.skill_Server,
+    this.skill_Others
+  );
+
+  searchSkill(e: Event): void | undefined {
+    const value = (e.target as HTMLInputElement).value;
+    console.log(value);
+
+    if (value == '') {
+      this.skills = this.skill_Language.concat(
+        this.skill_Framework_Library,
+        this.skill_CSS_Framework,
+        this.skill_Server,
+        this.skill_Others
+      );
+
+      return undefined;
+    }
+
+    let results: childSkills = [];
+    const searchResults = this.skillService.searchSkill(value);
+    console.log(searchResults);
+
+    for (const key in searchResults) {
+      results = results.concat(searchResults[key]);
+    }
+
+    this.skills = results;
+  }
 }

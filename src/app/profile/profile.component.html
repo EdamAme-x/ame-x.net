@@ -9,6 +9,9 @@
         <h3 class="text-lg font-mono text-gray-300 mt-2">Fullstack Developer</h3>
         <h4 class="text-md font-mono text-gray-300 mt-2">I'm good at framework development, etc.</h4>
     </div>
+    <div class="mt-5 flex justify-center">
+        <input (input)="searchSkill($event)" placeholder="Search Skill" class="border border-gray-200 rounded p-2 text-black text-center" />
+    </div>
     <div class="mt-5 flex justify-center flex-wrap skills-x">
         <div *ngFor="let skill of skills" class="mx-5 skill-x">
 
@@ -44,9 +47,7 @@
     <p class="my-3 text-center font-normal text-gray-700 dark:text-gray-400">
         <span *ngFor="let define of defines
         let i = index
-        "
-        [title]="define.desc"
-        >
+        " [title]="define.desc">
             {{ define.name }} {{ (i !== defines.length - 1) ? ' > ' : '' }}
         </span>
     </p>

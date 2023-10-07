@@ -296,11 +296,12 @@ export class SkillService {
   };
 
   public getSkills(): Skills {
-    return this.skills;
+    const newSKills = Object.assign({}, this.skills);
+    return newSKills;
   }
 
   public searchSkill(str: string): Skills {
-    let skills: Skills = this.skills;
+    let skills: Skills = this.getSkills();
 
     const keys = Object.keys(skills);
 
@@ -315,7 +316,7 @@ export class SkillService {
 
   private AmbiguousSearch(str: string, skillsArray: Skill[]): Skill[] {
     const options = {
-      threshold: 0.5,
+      threshold: 0.2,
       keys: ['name'],
     };
 
