@@ -7,6 +7,7 @@ interface Skill {
   icon?: string; // アイコン
   config?: any;
   case?: string; // 実際の事例(Github)
+  desc?: string;
 }
 
 interface Skills {
@@ -25,155 +26,176 @@ export class SkillService {
         name: 'HTML',
         level: 'Pro',
         icon: 'https://www.svgrepo.com/show/452228/html-5.svg',
+        case: 'https://github.com/EdamAme-x?tab=repositories&q=&type=&language=html&sort=',
       },
       {
         name: 'CSS',
         level: 'Pro',
         icon: 'https://www.svgrepo.com/show/452185/css-3.svg',
+        case: 'https://github.com/EdamAme-x?tab=repositories&q=&type=&language=css&sort=',
       },
       {
         name: 'JavaScript',
         level: 'Pro',
         icon: 'https://www.svgrepo.com/show/452045/js.svg',
+        case: 'https://github.com/EdamAme-x?tab=repositories&q=&type=&language=javascript&sort=',
       },
       {
         name: 'TypeScript',
-        level: 'Pro',
+        level: 'Specialty',
         icon: 'https://www.svgrepo.com/show/354478/typescript-icon.svg',
+        case: 'https://github.com/EdamAme-x?tab=repositories&q=&type=&language=typescript&sort=',
       },
       {
         name: 'C#',
-        level: 'Pro',
+        level: 'Reasonably good',
         icon: 'https://www.svgrepo.com/show/452184/csharp.svg',
       },
       {
         name: 'C/C++',
-        level: 'Pro',
+        level: 'Beginner',
         icon: 'https://www.svgrepo.com/show/373528/cpp3.svg',
       },
       {
         name: 'Python',
-        level: 'Pro',
+        level: 'Specialty',
         icon: 'https://www.svgrepo.com/show/354238/python.svg',
+        case: 'https://github.com/EdamAme-x?tab=repositories&q=&type=&language=python&sort=',
       },
       {
         name: 'PHP',
-        level: 'Pro',
+        level: 'One\'s forte',
         icon: 'https://www.svgrepo.com/show/373969/php2.svg',
+        case: 'https://github.com/EdamAme-x?tab=repositories&q=&type=&language=php&sort=',
       },
       {
         name: 'Zig',
-        level: 'Pro',
+        level: 'Reasonably good',
         icon: 'https://avatars.githubusercontent.com/u/27973237?s=160&v=4',
+        case: 'https://github.com/EdamAme-x?tab=repositories&q=&type=&language=zig&sort=',
       },
     ],
     'Framework-Library': [
       {
         name: 'Angular',
-        level: 'Pro',
+        level: 'Specialty',
         icon: 'https://icongr.am/devicon/angularjs-original.svg?size=128&color=currentColor',
+        case: 'https://github.com/EdamAme-x/ame-x.net',
       },
       {
         name: 'React',
         level: 'Pro',
         icon: 'https://www.svgrepo.com/show/452092/react.svg',
+        case: 'https://github.com/EdamAme-x?tab=repositories&q=React&type=&language=&sort=',
       },
       {
         name: 'Vue',
-        level: 'Pro',
+        level: 'Reasonably good',
         icon: 'https://www.svgrepo.com/show/354528/vue.svg',
+        case: 'https://github.com/EdamAme-x/Awesome-ToDo',
       },
       {
         name: 'Svelte',
-        level: 'Pro',
+        level: 'Reasonably good',
         icon: 'https://www.svgrepo.com/show/354416/svelte-icon.svg',
+        case: 'https://github.com/EdamAme-x/Awesome-ToDo',
       },
       {
         name: 'VanJS',
-        level: 'Pro',
+        level: 'Reasonably good',
         icon: 'https://www.svgrepo.com/show/407493/soft-ice-cream.svg',
       },
       {
         name: 'Naxt.js',
-        level: 'Pro',
+        level: 'Reasonably good',
         icon: 'https://github.com/EdamAme-x/Naxt.js/raw/main/assets/icon.png',
+        case: 'https://github.com/EdamAme-x/Naxt.js',
       },
       {
         name: 'Next.js',
-        level: 'Pro',
+        level: 'One\'s forte',
         icon: 'https://www.svgrepo.com/show/306466/next-dot-js.svg',
         config: {
           invert: 'invert-x',
         },
+        case: 'https://github.com/EdamAme-x/s0u7a-net',
       },
       {
         name: 'Nuxt.js',
-        level: 'Pro',
+        level: 'Reasonably good',
         icon: 'https://www.svgrepo.com/show/354131/nuxt-icon.svg',
       },
       {
         name: 'Fresh',
         level: 'Pro',
         icon: 'https://www.svgrepo.com/show/406060/lemon.svg',
+        case: 'https://github.com/Liberluna/Liberchat',
       },
       {
         name: 'Astro',
-        level: 'Pro',
+        level: 'Reasonably good',
         icon: 'https://www.svgrepo.com/show/373446/astro.svg',
+        case: 'https://github.com/Liberluna/liberluna.github.io',
       },
       {
         name: 'Electron',
-        level: 'Pro',
+        level: 'One\'s forte',
         icon: 'https://www.svgrepo.com/show/353689/electron.svg',
       },
       {
         name: 'Tauri',
-        level: 'Pro',
+        level: 'Reasonably good',
         icon: 'https://tauri.app/meta/favicon-32x32.png',
       },
       {
         name: 'PReact',
-        level: 'Pro',
+        level: 'Specialty',
         icon: 'https://www.svgrepo.com/show/354204/preact.svg',
+        case: 'https://github.com/EdamAme-x/Naxt.js',
       },
       {
         name: 'Solid',
-        level: 'Pro',
+        level: 'Reasonably good',
         icon: 'https://avatars.githubusercontent.com/u/79226042?s=280&v=4',
+        case: 'https://github.com/EdamAme-x/Awesome-ToDo',
       },
       {
         name: 'Lit',
-        level: 'Pro',
+        level: 'Reasonably good',
         icon: 'https://pbs.twimg.com/media/F7mGQz6awAAzO_K?format=png&name=small',
+        case: 'https://github.com/EdamAme-x/Awesome-ToDo',
       },
       {
         name: 'jQuery',
-        level: 'Pro',
+        level: 'One\'s forte',
         icon: 'https://static-00.iconduck.com/assets.00/jquery-icon-2018x2048-nrk2gcih.png',
+        case: 'https://github.com/EdamAme-x?tab=repositories&q=jQuery&type=&language=&sort=',
       },
     ],
     'CSS-Framework-Library': [
       {
         name: 'TailwindCSS',
-        level: 'Pro',
+        level: 'Specialty',
         icon: 'https://www.svgrepo.com/show/354431/tailwindcss-icon.svg',
+        case: 'https://github.com/EdamAme-x?tab=repositories&q=tailwindcss&type=&language=&sort=',
       },
       {
         name: 'UnoCSS',
-        level: 'Pro',
+        level: 'One\'s forte',
         icon: 'https://www.svgrepo.com/show/491429/layout.svg',
         config: {
           invert: 'invert-x',
         },
+        case: 'https://github.com/EdamAme-x?tab=repositories&q=fresh&type=&language=&sort=',
       },
       {
         name: 'Twind',
-        level: 'Pro',
+        level: 'Specialty',
         icon: 'https://twind.dev/assets/twind-logo.png',
       },
       {
         name: 'CSS modules',
-        level: 'Pro',
+        level: 'One\'s forte',
         icon: 'https://www.svgrepo.com/show/501265/module.svg',
         config: {
           invert: 'invert-x',
@@ -181,7 +203,7 @@ export class SkillService {
       },
       {
         name: 'Scss',
-        level: 'Pro',
+        level: 'One\'s forte',
         icon: 'https://www.svgrepo.com/show/374067/scss2.svg',
       },
     ],
@@ -190,10 +212,11 @@ export class SkillService {
         name: 'Hono',
         level: 'Pro',
         icon: 'https://hono.dev/favicon.ico',
+        case: 'https://github.com/EdamAme-x?tab=repositories&q=Hono&type=&language=javascript&sort=',
       },
       {
         name: 'Oak',
-        level: 'Pro',
+        level: 'Reasonably good',
         icon: 'https://www.svgrepo.com/show/481446/oak-leaf-1.svg',
         config: {
           invert: 'invert-x',
@@ -201,37 +224,41 @@ export class SkillService {
       },
       {
         name: 'Express',
-        level: 'Pro',
+        level: 'One\'s forte',
         icon: 'https://icongr.am/devicon/express-original.svg?size=128&color=ffffff',
+        case: 'https://github.com/EdamAme-x/ITResearcher',
       },
     ],
     Others: [
       {
         name: 'Git / GitHub',
-        level: 'Pro',
+        level: 'One\'s forte',
         icon: 'https://icongr.am/devicon/github-original.svg?size=128&color=ffffff',
         config: {
           invert: 'invert-x',
         },
+        case: 'https://github.com/EdamAme-x',
       },
       {
         name: 'NodeJS',
-        level: 'Pro',
+        level: 'Specialty',
         icon: 'https://www.svgrepo.com/show/354119/nodejs-icon.svg',
+        case: 'https://github.com/EdamAme-x?tab=repositories&q=&type=&language=javascript&sort=',
       },
       {
         name: 'Deno',
         level: 'Pro',
         icon: 'https://www.svgrepo.com/show/378789/deno.svg',
+        case: 'https://github.com/EdamAme-x?tab=repositories&q=deno&type=&language=&sort=',
       },
       {
         name: 'Bun',
-        level: 'Pro',
+        level: 'One\'s forte',
         icon: 'https://bun.sh/favicon.ico',
       },
       {
         name: 'PackageManager',
-        level: 'Pro',
+        level: 'Specialty',
         icon: 'https://www.svgrepo.com/show/505953/package.svg',
         config: {
           invert: 'invert-x',
@@ -239,17 +266,17 @@ export class SkillService {
       },
       {
         name: 'VSCode',
-        level: 'Pro',
+        level: 'Specialty',
         icon: 'https://www.svgrepo.com/show/374171/vscode.svg',
       },
       {
         name: 'VStudio',
-        level: 'Pro',
+        level: 'Reasonably good',
         icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Visual_Studio_Icon_2019.svg/1200px-Visual_Studio_Icon_2019.svg.png',
       },
       {
         name: 'CRX',
-        level: 'Pro',
+        level: 'Specialty',
         icon: 'https://www.svgrepo.com/show/63996/crx-file-format-symbol.svg',
         config: {
           invert: 'invert-x',
@@ -265,12 +292,12 @@ export class SkillService {
       },
       {
         name: 'Blender',
-        level: 'Pro',
+        level: 'Reasonably good',
         icon: 'https://www.svgrepo.com/show/353488/blender.svg',
       },
       {
         name: 'CTF',
-        level: 'Pro',
+        level: 'Reasonably good',
         icon: 'https://www.svgrepo.com/show/527780/lock-unlocked.svg',
         config: {
           invert: 'invert-x',
@@ -278,7 +305,7 @@ export class SkillService {
       },
       {
         name: 'Bash / Shell',
-        level: 'Pro',
+        level: 'One\'s forte',
         icon: 'https://www.svgrepo.com/show/514087/console.svg',
         config: {
           invert: 'invert-x',
