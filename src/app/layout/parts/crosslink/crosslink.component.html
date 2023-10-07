@@ -1,0 +1,9 @@
+<div class="mt-10 flex flex-col items-center">
+    <p class="text-2xl font-mono">CrossLink</p>
+    <div class="mt-5">
+        <div *ngFor="let crosslink of crosslinks" class="flex flex-col">
+            <p><a target="_blank" class="text-blue-400" [href]="crosslink.link">{{ crosslink.name }}</a> : {{ crosslink.description }}
+            </p>
+        </div>
+    </div>
+</div>

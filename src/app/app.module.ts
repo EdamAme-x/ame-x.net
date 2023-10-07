@@ -17,6 +17,7 @@ import { RocketComponent } from './layout/parts/rocket/rocket.component';
 import { LinksComponent } from './layout/parts/links/links.component';
 import { TechsComponent } from './layout/parts/techs/techs.component';
 import { ProfileComponent } from './profile/profile.component';
+import { CrosslinkComponent } from './layout/parts/crosslink/crosslink.component';
 
 // Module
 import { MatIconModule } from '@angular/material/icon';
@@ -37,7 +38,8 @@ import { SkillService } from './info/skill.service';
     RocketComponent,
     LinksComponent,
     TechsComponent,
-    ProfileComponent
+    ProfileComponent,
+    CrosslinkComponent
   ],
   imports: [
     BrowserModule,

@@ -10,13 +10,13 @@
         <h4 class="text-md font-mono text-gray-300 mt-2">I'm good at framework development, etc.</h4>
     </div>
     <div class="mt-5 flex justify-center">
-        <input (input)="searchSkill($event)" placeholder="Search Skill" class="border border-gray-200 rounded p-2 text-black text-center" />
+        <input (input)="searchSkill($event)" placeholder="Search Skill"
+            class="border border-gray-200 rounded p-2 text-black text-center" />
     </div>
     <div class="mt-5 flex justify-center flex-wrap skills-x">
         <div *ngFor="let skill of skills" class="mx-5 skill-x">
 
-            <div 
-                [id]="'skill-x-' + skill['name']"
+            <div [id]="'skill-x-' + skill['name']"
                 class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700  m-2">
                 <div class="w-full flex justify-center p-4">
                     <img [class]="'rounded-t-lg ' + haveIinvert(skill)" [src]="skill['icon']" alt="Skill-Icon"
