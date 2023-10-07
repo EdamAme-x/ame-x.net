@@ -4,7 +4,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 @Component({
   selector: 'LayoutPartsAbility',
   templateUrl: './ability.component.html',
-  styleUrls: ['./ability.component.scss']
+  styleUrls: ['./ability.component.scss'],
 })
 export class AbilityComponent {
   RawCode = `
@@ -70,6 +70,8 @@ window.onload = () => {
   toPage(page: string) {
     window.location.href = page;
   }
+
+  Math: any = Math;
 
   constructor(private sanitizer: DomSanitizer) {
     this.ScriptCode = this.sanitizer.bypassSecurityTrustHtml(this.RawCode);

@@ -15,7 +15,8 @@
     <div class="mt-5 flex justify-center flex-wrap skills-x">
         <div *ngFor="let skill of skills" class="mx-5 skill-x">
 
-            <div
+            <div 
+                [id]="'skill-x-' + skill['name']"
                 class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700  m-2">
                 <div class="w-full flex justify-center p-4">
                     <img [class]="'rounded-t-lg ' + haveIinvert(skill)" [src]="skill['icon']" alt="Skill-Icon"
