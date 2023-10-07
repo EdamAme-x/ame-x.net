@@ -10,11 +10,13 @@ export class CrosslinkComponent {
     name: string;
     description: string;
     link: string;
+    color?: string;
   }[] = [
     {
       name: 's0u7a.net',
       description: 'The website of @s0u7a',
       link: 'https://s0u7a.net',
+      color: 'green',
     },
     {
       name: 'doremire-server.com',
