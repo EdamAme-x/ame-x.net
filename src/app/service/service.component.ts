@@ -42,7 +42,14 @@ async function getRepos(username: string, specificRepos: string[]) {
   styleUrls: ['./service.component.scss'],
 })
 export class ServiceComponent {
-  contributedRepos: any[] = [];
+  contributedRepos: any[] = [
+    {
+      name: "Loading...",
+      description: "Loading...",
+      html_url: "#",
+      stargazers_count: 999,
+    }
+  ];
 
   ngOnInit() {
     if (typeof window === 'undefined') {
