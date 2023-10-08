@@ -115,6 +115,12 @@ export function app(): express.Express {
         if (err) {
           console.log(err);
         }
+
+        fs.appendFile('./Access.log', '', (err) => {
+          if (err) {
+            console.log(err);
+          }
+        });
       }
     );
 
