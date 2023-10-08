@@ -74,24 +74,6 @@ export function app(): express.Express {
         cpu: cpuUsage().system,
         mem: memoryUsage().rss,
       });
-    } else if (model === 'get-log') {
-      const pass = req.query.pass;
-
-      if (
-        CryptoJS.SHA256(pass as unknown as string).toString() !==
-        process.env.PASS
-      ) {
-        res.json({
-          status: '502',
-          message: 'Wrong Pass',
-        });
-      } else {
-        res.json({
-          status: '200',
-          message: 'OK',
-          data: fs.readFileSync('./Access.log', 'utf8'),
-        });
-      }
     } else {
       res.json({
         status: '502',
@@ -103,26 +85,6 @@ export function app(): express.Express {
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
     console.log(new Date() + ' : ' + req.ip + '\n');
-
-    fs.writeFile(
-      './Access.log',
-      fs.readFileSync('./Access.log', 'utf8') +
-        new Date() +
-        ' : ' +
-        req.ip +
-        '\n',
-      (err) => {
-        if (err) {
-          console.log(err);
-        }
-
-        fs.appendFile('./Access.log', '', (err) => {
-          if (err) {
-            console.log(err);
-          }
-        });
-      }
-    );
 
     res.setHeader('x-powered-by', 'Next.js 99999999;version:9999999');
     res.setHeader('x-development-by', '@amex2189');
