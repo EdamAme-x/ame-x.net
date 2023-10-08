@@ -43,8 +43,11 @@
 <div class="flex flex-col justify-center items-center w-full">
     <LayoutPartsCrosslink />
 </div>
-<div>
-    <h5 class="text-xl font-mono text-center mt-5">Server Info</h5>
-    <p class="text-lg font-mono text-center">CPU Used: {{ cpuUsage }}%</p>
-    <p class="text-lg font-mono text-center">Memory Used: {{ memUsage }}MB</p>
+<div class="flex flex-col justify-center items-center w-full">
+    <ServiceSee />
+</div>
+<div class="bg-gray-900 mx-auto w-[250px] pb-5 mt-5 rounded-lg flex flex-col items-center">
+    <h5 class="text-xl font-mono mt-5">Server Info</h5>
+    <p class="text-lg font-mono">CPU Used: {{ cpuUsage }}%</p>
+    <p class="text-lg font-mono">Memory Used: {{ memUsage }}MB</p>
 </div>

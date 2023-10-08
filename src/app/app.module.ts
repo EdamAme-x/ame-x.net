@@ -20,7 +20,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { CrosslinkComponent } from './layout/parts/crosslink/crosslink.component';
 import { ServiceComponent } from './service/service.component';
 import { RepoComponent } from './service/repo/repo.component';
-
+import { SeeComponent } from './service/see/see.component';
 
 // Module
 import { MatIconModule } from '@angular/material/icon';
@@ -44,17 +44,11 @@ import { SkillService } from './info/skill.service';
     ProfileComponent,
     CrosslinkComponent,
     ServiceComponent,
-    RepoComponent
+    RepoComponent,
+    SeeComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MatIconModule
-  ],
-  providers: [
-    SkillService
-  ],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, MatIconModule],
+  providers: [SkillService],
+  bootstrap: [AppComponent],
 })
-
-export class AppModule { }
+export class AppModule {}
