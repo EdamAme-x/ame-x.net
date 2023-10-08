@@ -19,6 +19,8 @@ import { TechsComponent } from './layout/parts/techs/techs.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CrosslinkComponent } from './layout/parts/crosslink/crosslink.component';
 import { ServiceComponent } from './service/service.component';
+import { RepoComponent } from './service/repo/repo.component';
+
 
 // Module
 import { MatIconModule } from '@angular/material/icon';
@@ -41,7 +43,8 @@ import { SkillService } from './info/skill.service';
     TechsComponent,
     ProfileComponent,
     CrosslinkComponent,
-    ServiceComponent
+    ServiceComponent,
+    RepoComponent
   ],
   imports: [
     BrowserModule,

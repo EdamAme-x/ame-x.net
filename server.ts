@@ -6,9 +6,6 @@ import * as express from 'express';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { cpuUsage, memoryUsage } from 'process';
-import * as fs from 'fs';
-import * as CryptoJS from 'crypto-js';
-
 //@ts-ignore
 import compression from 'compression';
 

@@ -1,1 +1,7 @@
-<h1 class="text-4xl font-mono text-center mt-5"> ▲ MyService </h1>
+<h1 class="text-4xl font-mono text-center mt-5"> ▲ MyService & Works </h1>
+<h2 class="text-2xl font-mono text-center mt-2">Realtime</h2>
+<div class="flex justify-center flex-wrap mt-10">
+    <div *ngFor="let repo of contributedRepos" class="pt-5">
+        <ServiceRepo [repo]="repo" />
+    </div>
+</div>
