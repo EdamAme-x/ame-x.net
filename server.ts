@@ -5,7 +5,7 @@ import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { cpuUsage } from 'process';
+import { cpuUsage, memoryUsage } from 'process';
 
 //@ts-ignore
 import compression from 'compression';
@@ -66,11 +66,12 @@ export function app(): express.Express {
         message: 'OK',
         data: fried_num,
       });
-    } else if (model === 'cpuUsage') {
+    } else if (model === 'usage') {
       res.json({
         status: '200',
         message: 'OK',
-        data: cpuUsage().system,
+        cpu: cpuUsage().system,
+        mem: memoryUsage().rss,
       });
     } else {
       res.json({

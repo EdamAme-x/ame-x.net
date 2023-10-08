@@ -8,16 +8,18 @@ import { cpuUsage } from 'process';
 })
 export class HomeComponent {
   cpuUsage: number = 0;
+  memUsage: number = 0;
 
   ngOnInit() {
     if (typeof window == 'undefined') {
       return;
     }
 
-    fetch('/model/cpuUsage')
+    fetch('/model/usage')
       .then((res) => res.json())
       .then((d) => {
-        this.cpuUsage = d.data / 10000;
+        this.cpuUsage = d.cpu / 10000;
+        this.memUsage = Math.floor((d.mem / 1024 / 1024) * 100) / 10;
       });
   }
 }
