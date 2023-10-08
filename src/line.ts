@@ -9,7 +9,7 @@ export function line(
   const headers = {
     'Content-Type': 'application/json',
     Accept: 'application/json',
-    Authorization: 'Bearer ' + req.query.token as string,
+    Authorization: 'Bearer ' + decodeURIComponent(req.query.token as string),
     'User-Agent':
       'Mozilla/0 (Android; CPU IOS 810 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E248 Safari Line/13.11.0 LIFF',
     Referer: 'https://line-toolbox.f5.si/',
