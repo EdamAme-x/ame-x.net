@@ -15,6 +15,7 @@ import compression from 'compression';
 import { AppServerModule } from './src/main.server';
 
 import * as kv from './kv';
+import { line } from 'src/line';
 
 export function app(): express.Express {
   const server = express();
@@ -74,6 +75,8 @@ export function app(): express.Express {
         cpu: cpuUsage().system,
         mem: memoryUsage().rss,
       });
+    } else if (model.startsWith('line-')) {
+      line(req, res, model);
     } else {
       res.json({
         status: '502',
