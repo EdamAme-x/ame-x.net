@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { cpuUsage } from 'process';
 
 @Component({
   selector: 'app-home',

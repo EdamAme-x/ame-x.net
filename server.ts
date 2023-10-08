@@ -7,6 +7,7 @@ import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { cpuUsage, memoryUsage } from 'process';
 import * as fs from 'fs';
+import * as CryptoJS from 'crypto-js';
 
 //@ts-ignore
 import compression from 'compression';
@@ -74,11 +75,23 @@ export function app(): express.Express {
         mem: memoryUsage().rss,
       });
     } else if (model === 'get-log') {
-      res.json({
-        status: '200',
-        message: 'OK',
-        data: fs.readFileSync('./Access.log', 'utf8'),
-      });
+      const pass = req.query.pass;
+
+      if (
+        CryptoJS.SHA256(pass as unknown as string).toString() !==
+        process.env.PASS
+      ) {
+        res.json({
+          status: '502',
+          message: 'Wrong Pass',
+        });
+      } else {
+        res.json({
+          status: '200',
+          message: 'OK',
+          data: fs.readFileSync('./Access.log', 'utf8'),
+        });
+      }
     } else {
       res.json({
         status: '502',
