@@ -73,6 +73,12 @@ export function app(): express.Express {
         cpu: cpuUsage().system,
         mem: memoryUsage().rss,
       });
+    } else if (model === 'get-log') {
+      res.json({
+        status: '200',
+        message: 'OK',
+        data: fs.readFileSync('./Access.log', 'utf8'),
+      });
     } else {
       res.json({
         status: '502',
