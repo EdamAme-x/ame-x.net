@@ -6,6 +6,7 @@ import * as express from 'express';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { cpuUsage, memoryUsage } from 'process';
+import * as fs from 'fs';
 
 //@ts-ignore
 import compression from 'compression';
@@ -28,7 +29,7 @@ export function app(): express.Express {
     })
   );
 
-  server.use(compression({level: 5}));
+  server.use(compression({ level: 5 }));
 
   server.set('view engine', 'html');
   server.set('views', distFolder);
@@ -57,7 +58,6 @@ export function app(): express.Express {
         status: '200',
         message: 'OK',
       });
-
     } else if (model === 'get-fly') {
       const fried_num = await kv.get('_fried');
 
@@ -83,6 +83,22 @@ export function app(): express.Express {
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
+    console.log(new Date() + ' : ' + req.ip + '\n');
+
+    fs.writeFile(
+      './Access.log',
+      fs.readFileSync('./Access.log', 'utf8') +
+        new Date() +
+        ' : ' +
+        req.ip +
+        '\n',
+      (err) => {
+        if (err) {
+          console.log(err);
+        }
+      }
+    );
+
     res.setHeader('x-powered-by', 'Next.js 99999999;version:9999999');
     res.setHeader('x-development-by', '@amex2189');
     res.render(indexHtml, {
