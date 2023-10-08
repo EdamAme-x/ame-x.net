@@ -1,5 +1,7 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+Access.log
+
 # Compiled output
 /dist
 /tmp
@@ -34,13 +36,11 @@ yarn-error.log
 /connect.lock
 /coverage
 /libpeerconnection.log
-testem.log
 /typings
 
 # System files
 .DS_Store
 Thumbs.db
-*.log
 
 # ENV
 .env.local
@@ -50,3 +50,4 @@ Thumbs.db
 # SSH
 pokky
 pokky.hub
+node_modules
