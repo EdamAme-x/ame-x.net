@@ -107,7 +107,7 @@ export class SkillService {
       },
       {
         name: 'Naxt.js',
-        level: 'Reasonably good',
+        level: 'Pro',
         icon: 'https://github.com/EdamAme-x/Naxt.js/raw/main/assets/icon.png',
         case: 'https://github.com/EdamAme-x/Naxt.js',
       },
