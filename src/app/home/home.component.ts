@@ -22,7 +22,7 @@ export class HomeComponent {
       });
     setInterval(() => {
       this.cpuUsage =
-        Math.floor((this.cpuUsage + (Math.random() - 0.35)) * 10) / 10;
+        Math.floor((this.cpuUsage + (Math.random() - 0.5)) * 10) / 10;
       if (this.cpuUsage < 0) {
         this.cpuUsage += 1.2;
         this.cpuUsage = Math.floor(this.cpuUsage * 10) / 10;
@@ -32,7 +32,7 @@ export class HomeComponent {
       }
 
       this.memUsage =
-        Math.floor((this.memUsage + (Math.random() - 3.5)) * 10) / 10;
+        Math.floor((this.memUsage + (Math.random() - 5)) * 10) / 10;
       if (this.memUsage < 0) {
         this.memUsage += 12;
         this.memUsage = Math.floor(this.memUsage * 10) / 10;
