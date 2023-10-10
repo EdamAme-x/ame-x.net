@@ -5,10 +5,11 @@ Deploy: [ame-x-net.vercel.app](ame-x-net.vercel.app)
 
 ## Uses
  - Angular
+ - Angular Universal
  - Express
  - Node.js
  - Typescript
- - Sass
+ - Scss
  - Webpack
  - Babel
  - core-js
