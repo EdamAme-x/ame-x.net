@@ -206,6 +206,11 @@ export class SkillService {
         level: 'One\'s forte',
         icon: 'https://www.svgrepo.com/show/374067/scss2.svg',
       },
+      {
+        name: 'LIFF',
+        level: 'Specialty',
+        icon: 'https://www.svgrepo.com/show/530405/line-graph.svg',
+      },
     ],
     Server: [
       {
