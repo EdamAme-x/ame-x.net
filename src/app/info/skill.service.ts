@@ -106,6 +106,11 @@ export class SkillService {
         icon: 'https://www.svgrepo.com/show/407493/soft-ice-cream.svg',
       },
       {
+        name: 'XueryJS',
+        level: 'Pro',
+        icon: 'https://cdn.ame-x.net/Xuery.png',
+      },
+      {
         name: 'Naxt.js',
         level: 'Pro',
         icon: 'https://github.com/EdamAme-x/Naxt.js/raw/main/assets/icon.png',
