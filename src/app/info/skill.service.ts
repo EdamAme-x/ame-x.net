@@ -109,6 +109,7 @@ export class SkillService {
         name: 'XueryJS',
         level: 'Pro',
         icon: 'https://cdn.ame-x.net/Xuery.png',
+        case: 'https://github.com/EdamAme-x/XueryJS',
       },
       {
         name: 'Naxt.js',
