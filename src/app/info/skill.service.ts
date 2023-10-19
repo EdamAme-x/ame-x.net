@@ -270,6 +270,21 @@ export class SkillService {
         },
       },
       {
+        name: 'VercelKV',
+        level: 'Specialty',
+        icon: 'https://www.svgrepo.com/show/354512/vercel.svg',
+        case: 'https://github.com/EdamAme-x/ame-x.net',
+        config: {
+          invert: 'invert-x',
+        },
+      },
+      {
+        name: 'Supabase',
+        level: 'Reasonably good',
+        icon: 'https://supabase.com/favicon/favicon-128.png',
+        case: 'https://github.com/EdamAme-x/OpenChatMatching',
+      },
+      {
         name: 'VSCode',
         level: 'Specialty',
         icon: 'https://www.svgrepo.com/show/374171/vscode.svg',
