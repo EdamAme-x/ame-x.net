@@ -74,5 +74,17 @@ $ty: 2px;
 
 .profile-x {
   filter: invert(1);
-  margin-right: 5px;
+  margin: 0 10px;
+}
+
+.profile-box-x > a {
+  background: #0000001c;
+  height: 75%;
+  border-radius: 10px;
+  transition: all 0.05s;
+}
+
+.profile-box-x > a:hover {
+  box-shadow: 0 0 3px #fff;
+  transition: all 0.05s;
 }
