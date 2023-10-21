@@ -1,7 +1,8 @@
 # Ame-x.net
 Profile Site
 
-Deploy: [ame-x-net.vercel.app](ame-x-net.vercel.app)
+Deploy: [ame-x-net.vercel.app](ame-x-net.vercel.app)  
+To: [Ame-x.net](https://ame-x.net)
 
 ## Uses
  - Angular

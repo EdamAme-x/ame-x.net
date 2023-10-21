@@ -106,6 +106,12 @@ export class SkillService {
         icon: 'https://www.svgrepo.com/show/407493/soft-ice-cream.svg',
       },
       {
+        name: 'XueryJS',
+        level: 'Pro',
+        icon: 'https://cdn.ame-x.net/Xuery.png',
+        case: 'https://github.com/EdamAme-x/XueryJS',
+      },
+      {
         name: 'Naxt.js',
         level: 'Pro',
         icon: 'https://github.com/EdamAme-x/Naxt.js/raw/main/assets/icon.png',
@@ -206,6 +212,11 @@ export class SkillService {
         level: 'One\'s forte',
         icon: 'https://www.svgrepo.com/show/374067/scss2.svg',
       },
+      {
+        name: 'LIFF',
+        level: 'Specialty',
+        icon: 'https://www.svgrepo.com/show/530405/line-graph.svg',
+      },
     ],
     Server: [
       {
@@ -263,6 +274,21 @@ export class SkillService {
         config: {
           invert: 'invert-x',
         },
+      },
+      {
+        name: 'VercelKV',
+        level: 'Specialty',
+        icon: 'https://www.svgrepo.com/show/354512/vercel.svg',
+        case: 'https://github.com/EdamAme-x/ame-x.net',
+        config: {
+          invert: 'invert-x',
+        },
+      },
+      {
+        name: 'Supabase',
+        level: 'Reasonably good',
+        icon: 'https://supabase.com/favicon/favicon-128.png',
+        case: 'https://github.com/EdamAme-x/OpenChatMatching',
       },
       {
         name: 'VSCode',
