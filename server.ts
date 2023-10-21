@@ -42,8 +42,6 @@ export function app(): express.Express {
 
   server.get('/model/:api_name', async (req, res) => {
     const model = req.params.api_name;
-    console.log('req: ' + model);
-    //  process.env.ENV_KEY
     if (model === 'post-fly') {
       const fried_num: string | null = await kv.get('_fried');
 
@@ -93,7 +91,6 @@ export function app(): express.Express {
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
-    console.log(new Date() + ' : ' + req.ip + '\n');
 
     res.setHeader('x-powered-by', 'Next.js 99999999;version:9999999');
     res.setHeader('x-development-by', '@amex2189');

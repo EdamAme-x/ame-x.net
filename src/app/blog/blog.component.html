@@ -1,3 +1,54 @@
-<p>blog works!</p>
-https://zenn.dev/api/articles?username=ame_x&order=latest
-{{ articles | json }}
+<h1 class="text-4xl font-mono text-center mt-5"> ■ Blog & Articles </h1>
+<h2 class="text-2xl font-mono text-center mt-5"><span class="hidden">From Zenn / @amex2189 / Ame_X</span></h2>
+
+<div class="mt-5 flex flex-wrap items-center justify-center">
+    <div *ngFor="let article of articles" class="mt-5">
+        <div class="mx-5 blog-x p-5 w-[350px]">
+            <a [href]="'https://zenn.dev/ame_x/articles/' + article['slug']">
+                <div class="inline-flex justify-between">
+                    <span class="h-[40px] text-4xl">{{ article['emoji'] }}</span>
+                    <h3 class="h-[40px] font-bold" [style]="'overflow: hidden; text-overflow: ellipsis;'">{{
+                        article['title'] }}</h3>
+                </div>
+                <div class="mt-1 flex flex-col">
+                    <!-- Read: {{ article['body_letters_count'] }}
+                    Like: {{ article['liked_count'] }}
+                    Comment: {{ article['comments_count'] }}
+                    Published: {{ article['published_at'] }}
+                    Type: {{ article['article_type'] }} -->
+                    <p class="text-sm font-mono"><mat-icon class="text-lg mb-[-6px]">access_time</mat-icon>: {{
+                        convertToUserTime(article['published_at'])}}</p>
+                    <div class="flex justify-between mt-2">
+                        <p class="text-sm font-mono mx-1"><mat-icon class="text-lg mb-[-6px]">comment</mat-icon>: {{
+                            article['comments_count'] }}</p>
+                        <div
+                            class="w-[80px] text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 bg-red-200 text-red-700 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-archive mr-2">
+                                <polyline points="21 8 21 21 3 21 3 8"></polyline>
+                                <rect x="1" y="3" width="22" height="5"></rect>
+                                <line x1="10" y1="12" x2="14" y2="12"></line>
+                            </svg>
+                            {{ article['article_type'] }}
+                        </div>
+                        <p class="text-sm font-mono mx-1"><mat-icon class="text-lg mb-[-6px]">favorite</mat-icon>: {{
+                            article['liked_count'] }}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- { "id": 210233, "post_type": "Article", "title": "Math.random() は内部的に何を行っているのか。", "slug": "b3ada5021ed174", "comments_count": 1, "liked_count": 42, "body_letters_count": 3079, "article_type": "tech", "emoji": "🎲", "is_suspending_private": false, "published_at": "2023-10-17T18:21:01.006+09:00", "body_updated_at": "2023-10-19T13:30:37.435+09:00", "source_repo_updated_at": null, "pinned": false, "path": "/ame_x/articles/b3ada5021ed174", "user": { "id": 128904, "username": "ame_x", "name": "ame-x@amex2189", "avatar_small_url": "https://res.cloudinary.com/zenn/image/fetch/s--Bx8XG6Pg--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_70/https://storage.googleapis.com/zenn-user-upload/avatar/8674e481dd.jpeg" }, "publication": null } -->
+<!--
+title: ariticle.title
+url: "https://zenn.dev/ame_x/articles/" + ariticle.slug
+emoji: ariticle.emoji
+comments_count: ariticle.comments_count
+liked_count: ariticle.liked_count
+readed_count: ariticle.body_letters_count
+type: ariticle.article_type
+published_at: ariticle.published_at
+-->
