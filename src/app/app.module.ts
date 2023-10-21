@@ -25,6 +25,7 @@ import { SeeComponent } from './service/see/see.component';
 // Module
 import { MatIconModule } from '@angular/material/icon';
 import { SkillService } from './info/skill.service';
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { SkillService } from './info/skill.service';
     ServiceComponent,
     RepoComponent,
     SeeComponent,
+    BlogComponent
   ],
   imports: [BrowserModule, AppRoutingModule, MatIconModule],
   providers: [SkillService],

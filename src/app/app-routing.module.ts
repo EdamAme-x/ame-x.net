@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ServiceComponent } from './service/service.component';
+import { BlogComponent } from './blog/blog.component';
 
 export const routes: Routes = [
   {
@@ -23,6 +24,10 @@ export const routes: Routes = [
   {
     path: 'service',
     component: ServiceComponent,
+  },
+  {
+    path: 'blog',
+    component: BlogComponent,
   },
   {
     path: '**',

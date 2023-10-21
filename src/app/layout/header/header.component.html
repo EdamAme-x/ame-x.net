@@ -1,10 +1,7 @@
 <header class="flex justify-between w-screen h-[50px] px-1 bg-[#FFFFFF10] fixed top-0 z-[15]">
     <a class="flex" [routerLink]="['/home']">
-        <img src="assets/rocket.png" class="w-[50px] h-[50px] scale-150 logo-x" alt=" logo-rocket"
-            srcset="assets/rocket.webp" width="50" height="50" />
-        <div class="inline font-bold font-mono text-2xl h-[50px] flex items-center">
-            Ame-<span class="text-shadow-x" [innerText]="'𝕏'"></span>
-        </div>
+        <img src="assets/Ace.png" class="w-[50px] h-[50px] scale-[0.7] logo-x" alt=" logo-rocket"
+            srcset="assets/Ace.png" width="50" height="50" />
     </a>
     <div class="profile-box-x flex items-center justify-center h-full mr-[4vw]">
         <a class="flex items-center justify-center h-full mr-1" [routerLink]="['/profile']">
@@ -12,10 +9,15 @@
                 class="profile-x" />
             <!-- <p class="mr-5 text-white inline font-bold font-mono text-xl h-[50px] flex items-center">Profile</p> -->
         </a>
-        <a class="flex items-center justify-center h-full ml-2" [routerLink]="['/service']">
-            <img src="https://www.svgrepo.com/show/489230/work-alt.svg" height="20" width="20" alt="profile"
+        <a class="flex items-center justify-center h-full ml-1" [routerLink]="['/service']">
+            <img src="https://www.svgrepo.com/show/489230/work-alt.svg" height="20" width="20" alt="service"
                 class="profile-x" />
             <!-- <p class="mr-5 text-white inline font-bold font-mono text-xl h-[50px] flex items-center">Wroks</p> -->
+        </a>
+        <a class="flex items-center justify-center h-full ml-2" [routerLink]="['/blog']">
+            <img src="https://www.svgrepo.com/show/351781/blog.svg" height="20" width="20" alt="blog"
+                class="profile-x" />
+            <!-- <p class="mr-5 text-white inline font-bold font-mono text-xl h-[50px] flex items-center">Blog</p> -->
         </a>
     </div>
 </header>
@@ -33,8 +35,20 @@
 <div
     [class]="(isOpen && menuOpacity == 100 ? 'opacity-100 ' : 'opacity-0 pointer-events-none ') + 'transition duration-[250ms] relative z-[15]'">
     <div class="fixed bottom-10 right-10">
+        <a [routerLink]="['/blog']"
+            class="bg-yellow-500 absolute bottom-[180px] right-[125px] w-[50px] h-[50px] box-shadow-b rounded-full px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-white-300 focus-visible:ring active:text-white-700 md:text-base">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <path
+                        d="M9 7H5C3.89543 7 3 7.89543 3 9V18C3 19.1046 3.89543 20 5 20H19C20.1046 20 21 19.1046 21 18V9C21 7.89543 20.1046 7 19 7H15M9 7V5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7M9 7H15"
+                        stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+            </svg>
+        </a>
         <a [routerLink]="['/service']"
-            class="bg-green-500 absolute bottom-[125px] right-[150px] w-[50px] h-[50px] box-shadow-b rounded-full px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-white-300 focus-visible:ring active:text-white-700 md:text-base">
+            class="bg-green-500 absolute bottom-[115px] right-[175px] w-[50px] h-[50px] box-shadow-b rounded-full px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-white-300 focus-visible:ring active:text-white-700 md:text-base">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -46,7 +60,7 @@
             </svg>
         </a>
         <a [routerLink]="['/profile']"
-            class="bg-blue-500 absolute bottom-[110px] right-[75px] w-[50px] h-[50px] box-shadow-b rounded-full px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-white-300 focus-visible:ring active:text-white-700 md:text-base">
+            class="bg-blue-500 absolute bottom-[115px] right-[75px] w-[50px] h-[50px] box-shadow-b rounded-full px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-white-300 focus-visible:ring active:text-white-700 md:text-base">
             <svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
