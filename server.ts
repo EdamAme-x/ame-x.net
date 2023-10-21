@@ -74,6 +74,15 @@ export function app(): express.Express {
       });
     } else if (model.startsWith('line-')) {
       line(req, res, model);
+    } else if(model === "articles"){
+      const resp = await fetch("https://zenn.dev/api/articles?username=ame_x&order=latest");
+      const data = await resp.json();
+      
+      res.json({
+        status: '200',
+        message: 'OK',
+        data: data.articles
+      })
     } else {
       res.json({
         status: '502',
