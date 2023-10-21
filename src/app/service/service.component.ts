@@ -64,7 +64,6 @@ export class ServiceComponent {
         }
         return repo;
       });
-      console.log(this.contributedRepos);
     });
   }
 }
