@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SkillService } from '../info/skill.service';
+import { Title } from '@angular/platform-browser';
 
 type childSkills = {
   [key: string]: any;
@@ -14,13 +15,17 @@ export class ProfileComponent {
   test: string = '';
 
   ngOnInit() {
+    this.titleService.setTitle('Ame_x PROFILE');
     this.test = JSON.stringify(this.skillService.searchSkill('h'));
     if (typeof window !== 'undefined') {
       this.isInClient = true;
     }
   }
 
-  constructor(private skillService: SkillService) {}
+  constructor(
+    private skillService: SkillService,
+    private titleService: Title
+  ) {}
 
   haveIinvert(lang: any): string | undefined {
     return this.skillService.haveIinvert(lang);
@@ -80,8 +85,8 @@ export class ProfileComponent {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 100) {
         this.bgOpacity = 0;
-      }else {
-        this.bgOpacity = 100
+      } else {
+        this.bgOpacity = 100;
       }
     });
 
