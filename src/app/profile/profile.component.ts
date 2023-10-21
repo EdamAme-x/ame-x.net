@@ -69,4 +69,24 @@ export class ProfileComponent {
 
     this.skills = results;
   }
+
+  bgOpacity: number = 100;
+
+  ngAfterViewInit() {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        this.bgOpacity = 0;
+      }else {
+        this.bgOpacity = 100
+      }
+    });
+
+    // setTimeout(() => {
+    //   this.bgOpacity = 0;
+    // }, 1000);
+  }
 }

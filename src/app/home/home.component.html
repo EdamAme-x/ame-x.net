@@ -1,6 +1,6 @@
 <div class="flex justify-around w-screen select-none">
     <div class="w-[500px] h-[550px] cover-x">
-        <img class="hero-x" src="assets/typer.webp" alt="typer" width="500" height="550" />
+        <img class="hero-x relative z-[9]" src="assets/typer.webp" alt="typer" width="500" height="550" />
     </div>
     <div class="flex flex-col justify-center items-center cache-x">
         <h1 class="text-4xl font-mono">
@@ -40,15 +40,15 @@
 <div class="flex flex-col justify-center items-center w-full">
     <LayoutPartsLinks />
 </div>
-<div class="flex flex-col justify-center items-center w-full">
+<div class="flex flex-col justify-center items-center w-full mt-3">
     <LayoutPartsTechs />
 </div>
-<div class="flex flex-wrap justify-around my-3">
+<div class="flex flex-wrap justify-around mt-5 mb-3">
     <div class="flex flex-col justify-center items-center">
         <LayoutPartsCrosslink />
     </div>
-    <div class="bg-gray-900 opacity-[0.8] w-[250px] pb-5 mt-5 rounded-lg flex flex-col items-center shadow-lg">
-        <h5 class="text-xl font-mono mt-5">Server Info</h5>
+    <div class="opacity-[0.8] w-[250px] pb-5 mt-5 rounded-lg flex flex-col items-center shadow-lg">
+        <h5 class="text-2xl font-mono my-3">Server Info</h5>
         <p class="text-lg font-mono">CPU Used: {{ cpuUsage }}%</p>
         <p class="text-lg font-mono">Memory Used: {{ memUsage }}MB</p>
     </div>

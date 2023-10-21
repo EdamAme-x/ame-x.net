@@ -1,19 +1,18 @@
 <div class="min-h-[80vh]">
     <div class="flex justify-center mt-5">
-        <Icon size="100px" class="absolute z-[3] mt-[10px] opacity-[0.95]" />
-        <IconAtom style="width: 125px; height: 125px;position: relative;z-index: 2;" />
+        <Icon size="100px" />
     </div>
     <div class="text-center mt-5">
         <h1 class="text-4xl font-mono">Ame_x</h1>
         <h2 class="text-md font-mono text-gray-300 mt-3">@amex2189 / @EdamAme-x</h2>
         <h3 class="text-xl font-mono text-gray-300 mt-2">Fullstack Developer</h3>
-        <h4 class="text-lg font-mono text-gray-300 mt-2">I'm good at framework development, etc.</h4>
+        <h4 class="text-md font-mono text-gray-300 mt-2">I'm good at framework development, etc.</h4>
         <h5 class="text-md font-mono text-gray-300 mt-2">Mailto: <a href="mailto:admin@ame-x.net"
                 class="text-blue-400">admin@ame-x.net</a></h5>
     </div>
     <div class="mt-5 flex justify-center">
         <input (input)="searchSkill($event)" placeholder="Search Skill"
-            class="border border-gray-200 rounded p-2 text-black text-center" />
+            class="border border-gray-200 rounded p-2 text-black text-center mt-3" />
     </div>
     <div class="mt-5 flex justify-center flex-wrap skills-x">
         <div *ngFor="let skill of skills" class="mx-5 skill-x">
@@ -54,4 +53,10 @@
             {{ define.name }} {{ (i !== defines.length - 1) ? ' > ' : '' }}
         </span>
     </p>
+</div>
+<div class="h-full w-full transition duration-500 pointer-events-none" [style]="'opacity: ' + bgOpacity / 100 + ';'">
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[-1] scale-[15] opacity-[0.1]"
+        [style]="'filter: invert(72%) sepia(26%) saturate(6428%) hue-rotate(1deg) brightness(105%) contrast(102%);'">
+        <IconAtom point="A" />
+    </div>
 </div>

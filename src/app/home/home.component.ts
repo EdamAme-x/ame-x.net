@@ -39,4 +39,5 @@ export class HomeComponent {
       }
     }, 1000);
   }
+
 }
