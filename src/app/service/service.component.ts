@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 async function getRepos(username: string, specificRepos: string[]) {
   let repos = JSON.parse(localStorage.getItem('repos') as string);
@@ -51,7 +52,13 @@ export class ServiceComponent {
     }
   ];
 
+  constructor(
+    private titleService: Title
+  ) {}
+
   ngOnInit() {
+    this.titleService.setTitle('Ame_x SERVICE & WORKS');
+
     if (typeof window === 'undefined') {
       return;
     }

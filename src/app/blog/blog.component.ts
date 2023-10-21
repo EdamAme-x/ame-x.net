@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-blog',
@@ -6,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
+  constructor(
+    private titleService: Title
+  ) { }
+
   ngOnInit(): void {
+    this.titleService.setTitle('Ame_x BLOG');
+
     if (typeof window == 'undefined') {
       return void 0;
     }
@@ -47,7 +54,6 @@ export class BlogComponent implements OnInit {
         const day = parsedDate.getDate();
         const hours = parsedDate.getHours();
         const minutes = parsedDate.getMinutes();
-        const seconds = parsedDate.getSeconds();
         return `${year} ${month}/${day} ${hours}:${minutes}`;
     } catch (error) {
         return "invaid date";

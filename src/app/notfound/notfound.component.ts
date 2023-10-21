@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { routes } from '../app-routing.module';
 import Fuse from 'fuse.js';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-notfound',
@@ -11,7 +12,13 @@ export class NotfoundComponent {
   missingPath: string = '';
   maybePath: string = '/home';
 
+  constructor(
+    private titleService: Title
+  ) {}
+
   ngOnInit() {
+    this.titleService.setTitle('Ame_x NOT_FOUND');
+
     if (typeof window === 'undefined') {
       return;
     }
