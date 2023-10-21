@@ -3,6 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "hmr": true,
     "ame-x.net": {
       "projectType": "application",
       "schematics": {

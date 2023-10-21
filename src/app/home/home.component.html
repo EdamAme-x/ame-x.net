@@ -43,11 +43,13 @@
 <div class="flex flex-col justify-center items-center w-full">
     <LayoutPartsTechs />
 </div>
-<div class="flex flex-col justify-center items-center w-full">
-    <LayoutPartsCrosslink />
-</div>
-<div class="bg-gray-900 mx-auto w-[250px] pb-5 mt-5 rounded-lg flex flex-col items-center">
-    <h5 class="text-xl font-mono mt-5">Server Info</h5>
-    <p class="text-lg font-mono">CPU Used: {{ cpuUsage }}%</p>
-    <p class="text-lg font-mono">Memory Used: {{ memUsage }}MB</p>
+<div class="flex flex-wrap justify-around my-3">
+    <div class="flex flex-col justify-center items-center">
+        <LayoutPartsCrosslink />
+    </div>
+    <div class="bg-gray-900 opacity-[0.8] w-[250px] pb-5 mt-5 rounded-lg flex flex-col items-center shadow-lg">
+        <h5 class="text-xl font-mono mt-5">Server Info</h5>
+        <p class="text-lg font-mono">CPU Used: {{ cpuUsage }}%</p>
+        <p class="text-lg font-mono">Memory Used: {{ memUsage }}MB</p>
+    </div>
 </div>

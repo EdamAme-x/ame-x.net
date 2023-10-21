@@ -1,17 +1,17 @@
 <header class="flex justify-between w-screen h-[50px] px-1 bg-[#FFFFFF10] fixed top-0 z-[15]">
-    <div class="flex" (click)="toPage('/')">
+    <a class="flex" [routerLink]="['/home']">
         <img src="assets/rocket.png" class="w-[50px] h-[50px] scale-150 logo-x" alt=" logo-rocket"
             srcset="assets/rocket.webp" width="50" height="50" />
         <div class="inline font-bold font-mono text-2xl h-[50px] flex items-center">
             Ame-<span class="text-shadow-x" [innerText]="'𝕏'"></span>
         </div>
-    </div>
+    </a>
     <div>
-        <div class="flex items-center mr-1" (click)="toPage('/profile')">
+        <a class="flex items-center mr-1" [routerLink]="['/profile']">
             <img src="https://www.svgrepo.com/show/512690/profile-1335.svg" height="20" width="20" alt="profile"
                 class="profile-x" />
             <p class="mr-5 text-white inline font-bold font-mono text-xl h-[50px] flex items-center">Profile</p>
-        </div>
+        </a>
     </div>
 </header>
 
@@ -28,7 +28,7 @@
 <div
     [class]="(isOpen && menuOpacity == 100 ? 'opacity-100 ' : 'opacity-0 pointer-events-none ') + 'transition duration-[250ms] relative z-[15]'">
     <div class="fixed bottom-10 right-10">
-        <div (click)="toPage('/service')"
+        <a [routerLink]="['/service']"
             class="bg-green-500 absolute bottom-[125px] right-[150px] w-[50px] h-[50px] box-shadow-b rounded-full px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-white-300 focus-visible:ring active:text-white-700 md:text-base">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -39,8 +39,8 @@
                         stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                 </g>
             </svg>
-        </div>
-        <div (click)="toPage('/profile')"
+        </a>
+        <a [routerLink]="['/profile']"
             class="bg-blue-500 absolute bottom-[110px] right-[75px] w-[50px] h-[50px] box-shadow-b rounded-full px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-white-300 focus-visible:ring active:text-white-700 md:text-base">
             <svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
@@ -58,8 +58,8 @@
                     </g>
                 </g>
             </svg>
-        </div>
-        <div (click)="toPage('/home')"
+        </a>
+        <a [routerLink]="['/home']"
             class="bg-red-500 absolute bottom-[50px] right-[125px] w-[50px] h-[50px] box-shadow-b rounded-full px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-white-300 focus-visible:ring active:text-white-700 md:text-base">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -79,6 +79,6 @@
                         fill="#F1F1F1"></path>
                 </g>
             </svg>
-        </div>
+        </a>
     </div>
 </div>
