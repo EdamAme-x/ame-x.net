@@ -70,13 +70,19 @@ export class RocketComponent {
     fetch('/model/get-fly?key=' + Math.random().toString(16), {})
       .then((res) => res.json())
       .then((d) => {
-        this.fired = parseInt(d.data);
-        fetch('/model/post-fly?key=' + Math.random().toString(16)).then(() => {
-          this.fired++;
-          this.supply();
-        });
-        //@ts-ignore
-        window._after_fried_get = 'end';
+        if (parseInt(d.data).toString() === 'NaN') {
+          this.fired = 2000 + parseInt(Date.now().toString().slice(-2));
+        } else {
+          this.fired = parseInt(d.data);
+          fetch('/model/post-fly?key=' + Math.random().toString(16)).then(
+            () => {
+              this.fired++;
+              this.supply();
+            }
+          );
+          //@ts-ignore
+          window._after_fried_get = 'end';
+        }
       });
   }
 }
