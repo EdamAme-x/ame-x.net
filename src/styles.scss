@@ -2,35 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-    overflow-x: hidden;
-    @apply bg-[#212121] text-[#ddd] leading-5;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow-x: hidden;
+  @apply bg-[#212121] text-[#ddd] leading-5;
 }
 
 /* grid */
 body {
-    @apply grid grid-cols-12 gap-[30px] min-h-screen pt-[3rem];
+  @apply grid grid-cols-12 gap-[30px] min-h-screen pt-[3rem];
 }
 
 body > * {
-    @apply col-span-12;
+  @apply col-span-12;
 }
 
-body::-webkit-scrollbar{
-    width: 10px;
+body::-webkit-scrollbar {
+  width: 10px;
 }
 
-body::-webkit-scrollbar-track{
-    background-color: #212121;
+body::-webkit-scrollbar-track {
+  background-color: #212121;
 }
 
- body::-webkit-scrollbar-thumb{
-    background-color: rgba(218, 221, 221, 0.173);
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(218, 221, 221, 0.173);
 }
