@@ -2,3 +2,10 @@
   border-radius: 10px;
   box-shadow: 23px 23px 46px #1c1c1c, -23px -23px 46px #111111;
 }
+
+.search-x {
+  background: #212121;
+  box-shadow: inset 20px 20px 60px #212121, inset -20px -20px 60px #111111;
+  position: relative;
+  z-index: 7;
+}

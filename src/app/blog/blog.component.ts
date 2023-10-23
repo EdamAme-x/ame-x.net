@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import Fuse from 'fuse.js';
 
 @Component({
   selector: 'app-blog',
@@ -44,6 +45,8 @@ export class BlogComponent implements OnInit {
       this.articles = JSON.parse(localStorage.getItem('articles') as string);
     }
 
+    this.allArticles = Object.create(this.articles);
+
     this.orderDateArticle = Object.create(this.articles);
     this.orderLikeArticle = Object.create(this.articles).sort(
       (a: any, b: any) => {
@@ -52,6 +55,7 @@ export class BlogComponent implements OnInit {
     );
   }
 
+  allArticles: { [key: string]: any }[] = [];
   articles: { [key: string]: any }[] = []; // View
   orderDateArticle: { [key: string]: any }[] = []; // order date
   orderLikeArticle: { [key: string]: any }[] = []; // order like article
@@ -78,5 +82,23 @@ export class BlogComponent implements OnInit {
     }
 
     console.log(e.target?.value);
+  }
+
+  searchBlog(e: Event): void {
+    const value = (e.target as HTMLInputElement).value;
+
+    if (value == '') {
+      this.articles = Object.create(this.allArticles);
+      return void 0;
+    }
+
+    const options = {
+      threshold: 0.2,
+      keys: ['title'],
+    };
+
+    const fuse: Fuse<any> = new Fuse(this.allArticles, options);
+
+    this.articles = fuse.search(value).map((x) => x.item);
   }
 }
