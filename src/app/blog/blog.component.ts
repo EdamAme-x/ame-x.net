@@ -45,20 +45,13 @@ export class BlogComponent implements OnInit {
       this.articles = JSON.parse(localStorage.getItem('articles') as string);
     }
 
+    this.searchArticles = Object.create(this.articles);
     this.allArticles = Object.create(this.articles);
-
-    this.orderDateArticle = Object.create(this.articles);
-    this.orderLikeArticle = Object.create(this.articles).sort(
-      (a: any, b: any) => {
-        return b.liked_count - a.liked_count;
-      }
-    );
   }
 
   allArticles: { [key: string]: any }[] = [];
   articles: { [key: string]: any }[] = []; // View
-  orderDateArticle: { [key: string]: any }[] = []; // order date
-  orderLikeArticle: { [key: string]: any }[] = []; // order like article
+  searchArticles: { [key: string]: any }[] = []; // Search
 
   convertToUserTime(input: string): string {
     try {
@@ -75,17 +68,50 @@ export class BlogComponent implements OnInit {
   }
 
   sortBy(e: Event | any) {
-    if (e.target?.value == '更新順') {
-      this.articles = Object.create(this.orderDateArticle);
-    } else if (e.target?.value == '評価順') {
-      this.articles = Object.create(this.orderLikeArticle);
+    console.log(this.target.value.length)
+    if (this.target.value.length === 0) {
+      this.searchArticles = Object.create(this.allArticles);
     }
 
-    console.log(e.target?.value);
+    if (e.target?.value == '更新順') {
+      this.articles = Object.create(
+        Object.create(this.searchArticles).sort((a: any, b: any) => {
+          return b.updated_at - a.updated_at;
+        })
+      );
+
+      this.now = '更新順';
+    } else if (e.target?.value == '評価順') {
+      this.articles = Object.create(
+        Object.create(this.searchArticles).sort((a: any, b: any) => {
+          return b.liked_count - a.liked_count;
+        })
+      );
+
+      this.now = '評価順';
+    } else {
+      this.articles = Object.create(this.allArticles);
+    }
   }
+
+  now: string = "更新順";
+  lengths: number = 1;
+  target: any = null;
 
   searchBlog(e: Event): void {
     const value = (e.target as HTMLInputElement).value;
+    if (!this.target) {
+      this.target = e.target;
+    }
+
+    if (this.lengths === 0) {
+      this.lengths = 1;
+    }
+
+    if ((e.target as HTMLInputElement).value.length <= this.lengths) {
+      this.articles = Object.create(this.allArticles);
+      this.lengths = (e.target as HTMLInputElement).value.length;
+    }
 
     if (value == '') {
       this.articles = Object.create(this.allArticles);
@@ -97,8 +123,9 @@ export class BlogComponent implements OnInit {
       keys: ['title'],
     };
 
-    const fuse: Fuse<any> = new Fuse(this.allArticles, options);
+    const fuse: Fuse<any> = new Fuse(this.articles, options);
 
-    this.articles = fuse.search(value).map((x) => x.item);
+    this.searchArticles = fuse.search(value).map((x) => x.item);
+    this.articles = Object.create(this.searchArticles);
   }
 }
