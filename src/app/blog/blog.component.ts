@@ -68,7 +68,10 @@ export class BlogComponent implements OnInit {
   }
 
   sortBy(e: Event | any) {
-    console.log(this.target.value.length)
+    if (!this.target) {
+      this.target = document.querySelector("div > input[placeholder='Search']");
+    }
+
     if (this.target.value.length === 0) {
       this.searchArticles = Object.create(this.allArticles);
     }
@@ -79,22 +82,17 @@ export class BlogComponent implements OnInit {
           return b.updated_at - a.updated_at;
         })
       );
-
-      this.now = '更新順';
     } else if (e.target?.value == '評価順') {
       this.articles = Object.create(
         Object.create(this.searchArticles).sort((a: any, b: any) => {
           return b.liked_count - a.liked_count;
         })
       );
-
-      this.now = '評価順';
     } else {
       this.articles = Object.create(this.allArticles);
     }
   }
 
-  now: string = "更新順";
   lengths: number = 1;
   target: any = null;
 
