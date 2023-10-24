@@ -1,10 +1,10 @@
-<h1 class="text-4xl font-mono text-center mt-5"> ■ Blog & Articles </h1>
+<h1 class="text-3xl font-mono text-center mt-5"> ■ Blog & Articles </h1>
 <h2 class="text-2xl font-mono text-center mt-5"><span class="hidden">From Zenn / @amex2189 / Ame_X</span></h2>
-<div class="my-5 mt-10 flex justify-center md:justify-between w-[67%] mx-auto">
+<div [id]="selector" class="my-5 mt-10 flex justify-center md:justify-between w-[67%] mx-auto">
     <input placeholder="Search" (input)="searchBlog($event)"
         class="search-x border border-gray-300 text-gray-300 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2 py-1.5" />
     <select (change)="sortBy($event)"
-        class="bg-gray-800 border border-gray-300 text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 py-1 w-[100px]">
+        class="bg-gray-800 text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 py-1 w-[100px]">
         <option value="更新順">
             更新順
         </option>

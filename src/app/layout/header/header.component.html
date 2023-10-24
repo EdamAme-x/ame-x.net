@@ -19,6 +19,20 @@
                 class="profile-x" />
             <!-- <p class="mr-5 text-white inline font-bold font-mono text-xl h-[50px] flex items-center">Blog</p> -->
         </a>
+        <!-- Humburger -->
+        <div class="flex flex-col">
+            <button (click)="toggleMenu()" class="flex items-center ml-3 mr-[-20px] p-2 text-sm text-gray-300 rounded-lg">
+                <svg *ngIf="!showMenu" class="w-5 h-5 filter" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+                <mat-icon *ngIf="showMenu" class="w-5 h-5 filter mt-[-5px]" aria-hidden="true">close</mat-icon>
+            </button>
+            <div *ngIf="showMenu" [@fadeInOut]>
+                <LayoutHeaderMenu />
+            </div>
+        </div>
     </div>
 </header>
 

@@ -21,11 +21,16 @@ import { CrosslinkComponent } from './layout/parts/crosslink/crosslink.component
 import { ServiceComponent } from './service/service.component';
 import { RepoComponent } from './service/repo/repo.component';
 import { SeeComponent } from './service/see/see.component';
+import { BlogComponent } from './blog/blog.component';
 
 // Module
 import { MatIconModule } from '@angular/material/icon';
 import { SkillService } from './info/skill.service';
-import { BlogComponent } from './blog/blog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// Others
+import { ImagePipe } from './pipes/image.pipe';
+import { MenuComponent } from './layout/header/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -47,9 +52,11 @@ import { BlogComponent } from './blog/blog.component';
     ServiceComponent,
     RepoComponent,
     SeeComponent,
-    BlogComponent
+    BlogComponent,
+    MenuComponent,
+    ImagePipe,
   ],
-  imports: [BrowserModule, AppRoutingModule, MatIconModule],
+  imports: [BrowserModule, AppRoutingModule, MatIconModule, BrowserAnimationsModule],
   providers: [SkillService],
   bootstrap: [AppComponent],
 })

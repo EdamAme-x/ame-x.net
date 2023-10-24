@@ -10,6 +10,8 @@ import Fuse from 'fuse.js';
 export class BlogComponent implements OnInit {
   constructor(private titleService: Title) {}
 
+  selector = '_' + parseInt(Math.random().toString().slice(-5)).toString(16);
+
   ngOnInit(): void {
     this.titleService.setTitle('Ame_x BLOG');
 
@@ -69,7 +71,9 @@ export class BlogComponent implements OnInit {
 
   sortBy(e: Event | any) {
     if (!this.target) {
-      this.target = document.querySelector("div > input[placeholder='Search']");
+      this.target = document.querySelector(
+        'div#' + this.selector + " > input[placeholder='Search']"
+      );
     }
 
     if (this.target.value.length === 0) {
