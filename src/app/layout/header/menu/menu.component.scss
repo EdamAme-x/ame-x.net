@@ -3,3 +3,15 @@
   background: linear-gradient(145deg, #1e1e1e, #232323);
   box-shadow: 10px 10px 30px #1c1c1c, -10px -10px 30px #262626;
 }
+
+.profile-box-x > a {
+  background: #0000001c;
+  border-radius: 10px;
+  transition: all 0.05s;
+  @apply p-1;
+}
+
+.profile-box-x > a:hover {
+  box-shadow: 0 0 2px #fff;
+  transition: all 0.05s;
+}

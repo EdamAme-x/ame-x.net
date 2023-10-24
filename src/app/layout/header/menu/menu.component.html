@@ -1,3 +1,7 @@
-<div class="menu-x w-[125px] min-h-[150px] absolute top-[60px] right-[20px] rounded-lg z-[9]">
-    m
+<div class="menu-x w-[150px] absolute top-[60px] right-[20px] p-1 rounded-lg z-[9]">
+    <div class="grid grid-cols-4 grid-row-span-1 w-full">
+        <div *ngFor="let nav of navs" class="flex h-[30px] profile-box-x" title="{{ nav.name }}">
+            <a [routerLink]="nav.path" [innerHTML]="nav.icon | image" [class]="nav.class + ' w-[30px] h-[30px]'"></a>
+        </div>
+    </div>
 </div>
