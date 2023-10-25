@@ -73,4 +73,12 @@ export class ServiceComponent {
       });
     });
   }
+
+  
+  deleteCache(): void {
+    localStorage.removeItem('repos');
+    localStorage.removeItem('expiry');
+
+    this.ngOnInit();
+  }
 }

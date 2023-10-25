@@ -7,7 +7,7 @@ type childSkills = {
 }[];
 
 @Component({
-  selector: 'app-profile',
+  selector: 'Profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
 })

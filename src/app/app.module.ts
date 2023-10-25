@@ -31,6 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Others
 import { ImagePipe } from './pipes/image.pipe';
 import { MenuComponent } from './layout/header/menu/menu.component';
+import { CareerComponent } from './career/career.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { MenuComponent } from './layout/header/menu/menu.component';
     SeeComponent,
     BlogComponent,
     MenuComponent,
+    CareerComponent,
     ImagePipe,
   ],
   imports: [BrowserModule, AppRoutingModule, MatIconModule, BrowserAnimationsModule],
