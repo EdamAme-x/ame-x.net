@@ -22,6 +22,9 @@ import { ServiceComponent } from './service/service.component';
 import { RepoComponent } from './service/repo/repo.component';
 import { SeeComponent } from './service/see/see.component';
 import { BlogComponent } from './blog/blog.component';
+import { XxxComponent } from './_/xxx/xxx.component';
+import { CareerComponent } from './career/career.component';
+import { MenuComponent } from './layout/header/menu/menu.component';
 
 // Module
 import { MatIconModule } from '@angular/material/icon';
@@ -31,8 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Others
 import { ImagePipe } from './pipes/image.pipe';
-import { MenuComponent } from './layout/header/menu/menu.component';
-import { CareerComponent } from './career/career.component';
+
 
 @NgModule({
   declarations: [
@@ -57,6 +59,7 @@ import { CareerComponent } from './career/career.component';
     BlogComponent,
     MenuComponent,
     CareerComponent,
+    XxxComponent,
     ImagePipe,
   ],
   imports: [

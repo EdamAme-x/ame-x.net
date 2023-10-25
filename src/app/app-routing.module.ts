@@ -7,6 +7,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { ServiceComponent } from './service/service.component';
 import { BlogComponent } from './blog/blog.component';
 import { CareerComponent } from './career/career.component';
+import { XxxComponent } from './_/xxx/xxx.component';
 
 export const routes: Routes = [
   {
@@ -33,6 +34,10 @@ export const routes: Routes = [
   {
     path: 'career',
     component: CareerComponent,
+  },
+  {
+    path: 'xxx',
+    component: XxxComponent
   },
   {
     path: '**',
