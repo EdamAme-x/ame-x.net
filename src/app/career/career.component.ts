@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Career, CareerService } from '../info/career.service';
 
 @Component({
   selector: 'Career',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./career.component.scss']
 })
 export class CareerComponent {
+  careers: Career[] = [];
 
+  ngOnInit(): void {
+    this.careers = this.careerService.getCareers();
+  }
+
+  constructor(private careerService: CareerService) { }
 }

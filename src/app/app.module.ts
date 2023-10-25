@@ -26,6 +26,7 @@ import { BlogComponent } from './blog/blog.component';
 // Module
 import { MatIconModule } from '@angular/material/icon';
 import { SkillService } from './info/skill.service';
+import { CareerService } from './info/career.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Others
@@ -58,8 +59,13 @@ import { CareerComponent } from './career/career.component';
     CareerComponent,
     ImagePipe,
   ],
-  imports: [BrowserModule, AppRoutingModule, MatIconModule, BrowserAnimationsModule],
-  providers: [SkillService],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MatIconModule,
+    BrowserAnimationsModule,
+  ],
+  providers: [SkillService, CareerService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
