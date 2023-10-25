@@ -17,7 +17,7 @@ export class MenuComponent {
     {
       name: 'Career',
       path: '/career',
-      icon: 'https://www.svgrepo.com/show/500614/management.svg',
+      icon: 'https://www.svgrepo.com/show/489411/certificate-badge.svg',
       class: 'filter invert',
     },
   ];
