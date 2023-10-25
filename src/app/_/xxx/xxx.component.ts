@@ -8,15 +8,16 @@ import { HashService } from 'src/app/utils/hash.service';
 })
 export class XxxComponent {
   passwordHash: string =
-    '73d8424e4dfd9b377f23714ddf6451d241c6dfe2739337ac2c9d714ec242d30a';
+    'bd8dcd8f38b30b56d99f7a9baabd1e1428bc0415bfdb4306a8f9f829500e3cda';
   password: string = '';
 
   constructor(private hash: HashService) {}
 
   guessPassword() {
-    if (this.hash.PowerHash(this.password) === this.passwordHash) {
+    // console.log(this.hash.PowerHash(this.password))
+    if (this.hash.PowerHash(this.password) == this.passwordHash) {
       alert('Password is correct');
-      alert(' Please do send me an DM.')
+      alert(' Please do send me an DM.');
     }
   }
 

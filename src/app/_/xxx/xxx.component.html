@@ -7,7 +7,7 @@
 <div class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-[#01010111] z-[20000]">
     <div class="flex flex-col justify-center items-center w-full">
         <input type="text"
-            (click)="inputPassword($event)"
+            (input)="inputPassword($event)"
             class="mb-6 w-[66%] bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             value="" placeholder="Password" />
         <button (click)="guessPassword()" class="mb-6 w-[66%] text-white font-bold text-xl bg-red-700 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">Guess</button>
