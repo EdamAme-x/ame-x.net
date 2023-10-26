@@ -49,11 +49,15 @@ export class BlogComponent implements OnInit {
 
     this.searchArticles = Object.create(this.articles);
     this.allArticles = Object.create(this.articles);
+
+    this.allLiked = this.articles.map((x) => x.liked_count).reduce((a, b) => a + b, 0);
   }
 
   allArticles: { [key: string]: any }[] = [];
   articles: { [key: string]: any }[] = []; // View
   searchArticles: { [key: string]: any }[] = []; // Search
+
+  allLiked: number = 0;
 
   convertToUserTime(input: string): string {
     try {

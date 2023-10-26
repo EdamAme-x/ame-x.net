@@ -72,15 +72,32 @@ export function app(): express.Express {
       });
     } else if (model.startsWith('line-')) {
       line(req, res, model);
-    } else if(model === "articles"){
-      const resp = await fetch("https://zenn.dev/api/articles?username=ame_x&order=latest");
+    } else if (model === 'articles') {
+      const resp = await fetch(
+        'https://zenn.dev/api/articles?username=ame_x&order=latest'
+      );
       const data = await resp.json();
-      
+
       res.json({
         status: '200',
         message: 'OK',
-        data: data.articles
-      })
+        data: data.articles,
+      });
+    } else if (model === 'zenn-likes') {
+      const resp = await fetch(
+        'https://zenn.dev/api/articles?username=ame_x&order=latest'
+      );
+      const data = await resp.json();
+
+      const likes = data.articles
+        .map((x: any) => x.liked_count)
+        .reduce((a: number, b: number) => a + b, 0);
+
+      res.json({
+        status: '200',
+        message: 'OK',
+        likes,
+      });
     } else {
       res.json({
         status: '502',
@@ -91,7 +108,6 @@ export function app(): express.Express {
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
-
     res.setHeader('x-powered-by', 'Next.js 99999999;version:9999999');
     res.setHeader('x-development-by', '@amex2189');
     res.render(indexHtml, {

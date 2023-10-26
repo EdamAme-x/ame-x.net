@@ -13,6 +13,8 @@ export class RocketComponent {
     await fetch('/model/post-fly?key=' + Math.random().toString(16), {});
 
     this.fired++;
+    // @ts-ignore
+    window.fried = this.fired;
 
     this.supply();
   }
@@ -44,6 +46,15 @@ export class RocketComponent {
   ngOnInit() {
     // @ts-ignore
     if (typeof window === 'undefined' || window._after_fried_get === 'end') {
+      // @ts-ignore
+      if (typeof windo !== 'undefined') {
+        // @ts-ignore
+        if (typeof window.fried == 'number') {
+          // @ts-ignore
+          this.fired = window.fried + 1;
+          this.firing();
+        }
+      }
       return;
     }
 
@@ -71,15 +82,24 @@ export class RocketComponent {
       .then((res) => res.json())
       .then((d) => {
         if (parseInt(d.data).toString() === 'NaN') {
-          this.fired = 2000 + parseInt(Date.now().toString().slice(-2));
+          this.fired = parseInt(Date.now().toString().slice(-5));
         } else {
           this.fired = parseInt(d.data);
           fetch('/model/post-fly?key=' + Math.random().toString(16)).then(
             () => {
               this.fired++;
-              this.supply();
             }
           );
+
+          fetch('model/zenn-likes?key=' + Math.random().toString(16))
+            .then((res) => res.json())
+            .then((data) => {
+              this.fired += data.likes;
+
+              //@ts-ignore
+              window.fried = this.fired;
+            });
+
           //@ts-ignore
           window._after_fried_get = 'end';
         }
