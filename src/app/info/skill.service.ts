@@ -144,6 +144,12 @@ export class SkillService {
         case: 'https://github.com/Liberluna/liberluna.github.io',
       },
       {
+        name: 'Svelte Kit',
+        level: 'Reasonably good',
+        icon: 'https://api.end2end.tech/preview?id=e26b653f08fd&type=png',
+        case: 'https://github.com/Edamame-x/MarsDDoS',
+      },
+      {
         name: 'Electron',
         level: 'One\'s forte',
         icon: 'https://www.svgrepo.com/show/353689/electron.svg',
