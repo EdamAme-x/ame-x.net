@@ -33,6 +33,16 @@ export class CareerService {
       date: '2023 / 10',
       url: 'https://zenn.dev/ame_x/articles/',
     },
+    {
+      title: 'Created the world\'s first generic self-bot for LINE OpenChat',
+      color: '#8888ff',
+      desc: `
+      Created the world's first generic self-bot for LINE OpenChat.
+      Please DM me if you have any questions.
+    `,
+      date: '2023 / 11',
+      url: 'https://twitter.com/amex2189',
+    },
   ];
 
   getCareers() {
