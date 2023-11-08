@@ -7,11 +7,19 @@
     </url>
     <url>
         <loc>https://ame-x.net/home</loc>
-        <priority>0.75</priority>
+        <priority>0.95</priority>
     </url>
     <url>
         <loc>https://ame-x.net/profile</loc>
-        <priority>0.75</priority>
+        <priority>0.95</priority>
+    </url>
+    <url>
+        <loc>https://ame-x.net/blog</loc>
+        <priority>0.95</priority>
+    </url>
+    <url>
+        <loc>https://ame-x.net/service</loc>
+        <priority>0.95</priority>
     </url>
     <!-- All -->
 </urlset>
