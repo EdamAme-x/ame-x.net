@@ -34,7 +34,9 @@ async function getRepos(username: string, specificRepos: string[]) {
     localStorage.setItem('expiry', (now + 12 * 60 * 60 * 1000).toString());
   }
 
-  return repos;
+  const pinnedRepo = []
+
+  return pinnedRepo.concat(repos);
 }
 
 @Component({
