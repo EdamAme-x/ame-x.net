@@ -34,7 +34,30 @@ async function getRepos(username: string, specificRepos: string[]) {
     localStorage.setItem('expiry', (now + 12 * 60 * 60 * 1000).toString());
   }
 
-  const pinnedRepo = []
+  const pinnedRepo = [
+    {
+      name: "Naxt.js",
+      description: "Framework using Hono 🔥 x HTMX </> | Ultrafast",
+      stargazers_count: "24",
+      html_url: "https://github.com/EdamAme-x/Naxt.js"
+    },
+    {
+      name: "Hono",
+      description: "Fast, Lightweight, Web-standards",
+      stargazers_count: "8.5k",
+      html_url: "https://github.com/honojs/hono"
+    },
+    {
+      name: "line-tool-box",
+      description: "lineで使えるWebツール集",
+      stargazers_count: "6"
+    },
+    {
+      name: "Misskey",
+      description: "🌎 An interplanetary microblogging platform 🚀",
+      stargazers_count: "8.7k"
+    }
+  ]
 
   return pinnedRepo.concat(repos);
 }
