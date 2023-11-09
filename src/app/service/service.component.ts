@@ -50,12 +50,14 @@ async function getRepos(username: string, specificRepos: string[]) {
     {
       name: "line-tool-box",
       description: "lineで使えるWebツール集",
-      stargazers_count: "6"
+      stargazers_count: "6",
+      html_url: "https://github.com/EdamAme-x/line-tool-box"
     },
     {
       name: "Misskey",
       description: "🌎 An interplanetary microblogging platform 🚀",
-      stargazers_count: "8.7k"
+      stargazers_count: "8.7k",
+      html_url: "https://github.com/misskey-dev/misskey"
     }
   ]
 
