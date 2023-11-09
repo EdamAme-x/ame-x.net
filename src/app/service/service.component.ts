@@ -44,7 +44,7 @@ async function getRepos(username: string, specificRepos: string[]) {
     {
       name: "Hono",
       description: "Fast, Lightweight, Web-standards",
-      stargazers_count: "8.5k",
+      stargazers_count: "8.5 k",
       html_url: "https://github.com/honojs/hono"
     },
     {
@@ -56,7 +56,7 @@ async function getRepos(username: string, specificRepos: string[]) {
     {
       name: "Misskey",
       description: "🌎 An interplanetary microblogging platform 🚀",
-      stargazers_count: "8.7k",
+      stargazers_count: "8.7 k",
       html_url: "https://github.com/misskey-dev/misskey"
     }
   ]
