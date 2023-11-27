@@ -38,27 +38,39 @@ async function getRepos(username: string, specificRepos: string[]) {
     {
       name: "Naxt.js",
       description: "Framework using Hono 🔥 x HTMX </> | Ultrafast",
-      stargazers_count: "24",
+      stargazers_count: "26",
       html_url: "https://github.com/EdamAme-x/Naxt.js"
     },
     {
       name: "Hono",
       description: "Fast, Lightweight, Web-standards",
-      stargazers_count: "8.5 k",
+      stargazers_count: "9 k",
       html_url: "https://github.com/honojs/hono"
     },
     {
       name: "line-tool-box",
       description: "lineで使えるWebツール集",
-      stargazers_count: "6",
+      stargazers_count: "7",
       html_url: "https://github.com/EdamAme-x/line-tool-box"
     },
     {
       name: "Misskey",
       description: "🌎 An interplanetary microblogging platform 🚀",
-      stargazers_count: "8.7 k",
+      stargazers_count: "9 k",
       html_url: "https://github.com/misskey-dev/misskey"
-    }
+    },
+    [
+      name: "tokutei-v3",
+      description: "次世代特定ツール",
+      stargrazers_count: "11",
+      html_url: "https://github.com/EdamAme-x/tokutei-v3"
+    ],
+    [
+      name: "nozoki",
+      description: "オプを権限無しで覗けるツール",
+      stargrazers_count: "10",
+      html_url: "https://github.com/EdamAme-x/nozoki"
+    ]
   ]
 
   return pinnedRepo.concat(repos);
