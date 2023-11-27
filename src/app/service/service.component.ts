@@ -59,18 +59,18 @@ async function getRepos(username: string, specificRepos: string[]) {
       stargazers_count: "9 k",
       html_url: "https://github.com/misskey-dev/misskey"
     },
-    [
+    {
       name: "tokutei-v3",
       description: "次世代特定ツール",
       stargrazers_count: "11",
       html_url: "https://github.com/EdamAme-x/tokutei-v3"
-    ],
-    [
+    },
+    {
       name: "nozoki",
       description: "オプを権限無しで覗けるツール",
       stargrazers_count: "10",
       html_url: "https://github.com/EdamAme-x/nozoki"
-    ]
+    }
   ]
 
   return pinnedRepo.concat(repos);
