@@ -19,7 +19,7 @@ export class CareerService {
       desc: `
     Create LINE Tool
     We created a tool that works on Open Chat, Talk, Groups.
-    The number of users reached 3,000 per day.
+    The number of users reached 5,000 per day.
     `,
       date: '2023 / 9',
       url: 'https://github.com/EdamAme-x/line-tool-box',
