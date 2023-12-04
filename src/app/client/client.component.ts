@@ -1,18 +1,17 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { Component, OnInit, Inject, PLATFORM_ID } from "@angular/core";
+import { isPlatformBrowser } from "@angular/common";
 
 @Component({
-  selector: 'Client',
-  templateUrl: './client.component.html',
-  styleUrls: []
+    selector: "Client",
+    templateUrl: "./client.component.html",
+    styleUrls: []
 })
 export class ClientComponent {
-  InClient: boolean;
+    InClient: boolean;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    this.InClient = isPlatformBrowser(this.platformId);
-  }
+    constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+        this.InClient = isPlatformBrowser(this.platformId);
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {}
 }
