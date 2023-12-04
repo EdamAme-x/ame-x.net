@@ -14,6 +14,12 @@ import { AppServerModule } from './src/main.server';
 import * as kv from './kv';
 import { line } from 'src/line';
 
+const path = require('path');
+ 
+const envs = process.env["KV_REST_API_URL"] ? process.env : require('dotenv').config({ 
+  path: path.resolve(__dirname, '../../../.env.development.local') 
+}).parsed;
+
 export function app(): express.Express {
   const server = express();
   const distFolder = join(process.cwd(), 'dist/ame-x.net/browser');
@@ -97,6 +103,14 @@ export function app(): express.Express {
         status: '200',
         message: 'OK',
         likes,
+      });
+    } else if (model === 'rocket-set-' + envs["PASS"]) {
+
+      await kv.set('_fried', (parseInt(req.query.number) ?? 10000).toString());
+      
+      res.json({
+        status: '200',
+        message: 'OK',
       });
     } else {
       res.json({
