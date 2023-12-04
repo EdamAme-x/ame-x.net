@@ -106,7 +106,7 @@ export function app(): express.Express {
       });
     } else if (model === 'rocket-set-' + envs["PASS"]) {
 
-      await kv.set('_fried', (parseInt(req.query.number) ?? 10000).toString());
+      await kv.set('_fried', (parseInt(req.query.number as string) ?? 10000).toString());
       
       res.json({
         status: '200',
