@@ -1,9 +1,9 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { Component, OnInit, Inject, PLATFORM_ID } from "@angular/core";
+import { isPlatformBrowser } from "@angular/common";
 
 @Component({
-	selector: 'Client',
-	templateUrl: './client.component.html',
+	selector: "Client",
+	templateUrl: "./client.component.html",
 	styleUrls: []
 })
 export class ClientComponent {

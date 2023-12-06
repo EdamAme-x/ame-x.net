@@ -1,8 +1,8 @@
-import { Component, Renderer2, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, Renderer2, ElementRef, AfterViewInit } from "@angular/core";
 
 @Component({
-	selector: 'ClientScript',
-	templateUrl: './script.component.html'
+	selector: "ClientScript",
+	templateUrl: "./script.component.html"
 })
 export class ScriptComponent implements AfterViewInit {
 	uuid: string = (Date.now() + Math.random() * 100000000000000000).toString(36);
@@ -13,19 +13,19 @@ export class ScriptComponent implements AfterViewInit {
 	) {}
 
 	ngAfterViewInit() {
-		if (typeof window === 'undefined') {
+		if (typeof window === "undefined") {
 			return;
 		}
 
-		const script = this.renderer.createElement('script');
-		this.renderer.setProperty(script, 'type', 'text/javascript');
+		const script = this.renderer.createElement("script");
+		this.renderer.setProperty(script, "type", "text/javascript");
 		this.renderer.appendChild(
 			script,
 			this.renderer.createText(
 				`${document
-					.getElementById('_script_' + this.uuid)
-					?.innerHTML.replace(/\@\[/g, '{')
-					.replace(/\]\@/g, '}')}`
+					.getElementById("_script_" + this.uuid)
+					?.innerHTML.replace(/\@\[/g, "{")
+					.replace(/\]\@/g, "}")}`
 			)
 		);
 

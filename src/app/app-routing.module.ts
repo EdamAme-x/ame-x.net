@@ -1,47 +1,47 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
 
-import { HomeComponent } from './home/home.component';
-import { ProfileComponent } from './profile/profile.component';
-import { NotfoundComponent } from './notfound/notfound.component';
-import { ServiceComponent } from './service/service.component';
-import { BlogComponent } from './blog/blog.component';
-import { CareerComponent } from './career/career.component';
-import { XxxComponent } from './_/xxx/xxx.component';
+import { HomeComponent } from "./home/home.component";
+import { ProfileComponent } from "./profile/profile.component";
+import { NotfoundComponent } from "./notfound/notfound.component";
+import { ServiceComponent } from "./service/service.component";
+import { BlogComponent } from "./blog/blog.component";
+import { CareerComponent } from "./career/career.component";
+import { XxxComponent } from "./_/xxx/xxx.component";
 
 export const routes: Routes = [
 	{
-		path: '',
-		redirectTo: '/home',
-		pathMatch: 'full'
+		path: "",
+		redirectTo: "/home",
+		pathMatch: "full"
 	},
 	{
-		path: 'home',
+		path: "home",
 		component: HomeComponent
 	},
 	{
-		path: 'profile',
+		path: "profile",
 		component: ProfileComponent
 	},
 	{
-		path: 'service',
+		path: "service",
 		component: ServiceComponent
 	},
 	{
-		path: 'blog',
+		path: "blog",
 		component: BlogComponent
 	},
 	{
-		path: 'career',
+		path: "career",
 		component: CareerComponent
 	},
 	{
-		path: 'xxx',
+		path: "xxx",
 		component: XxxComponent
 	},
 	{
-		path: '**',
-		pathMatch: 'full',
+		path: "**",
+		pathMatch: "full",
 		component: NotfoundComponent
 	}
 ];
@@ -49,7 +49,7 @@ export const routes: Routes = [
 @NgModule({
 	imports: [
 		RouterModule.forRoot(routes, {
-			initialNavigation: 'enabledBlocking'
+			initialNavigation: "enabledBlocking"
 		})
 	],
 	exports: [RouterModule]

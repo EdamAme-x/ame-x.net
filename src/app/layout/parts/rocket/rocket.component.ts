@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-	selector: 'LayoutPartsRocket',
-	templateUrl: './rocket.component.html',
-	styleUrls: ['./rocket.component.scss']
+	selector: "LayoutPartsRocket",
+	templateUrl: "./rocket.component.html",
+	styleUrls: ["./rocket.component.scss"]
 })
 export class RocketComponent {
 	fired: number = 0;
 
 	async firing() {
 		// add & refresh fried
-		await fetch('/model/post-fly?key=' + Math.random().toString(16), {});
+		await fetch("/model/post-fly?key=" + Math.random().toString(16), {});
 
 		this.fired++;
 		// @ts-ignore
@@ -20,7 +20,7 @@ export class RocketComponent {
 	}
 
 	supply() {
-		let endWithPrefix = 'th';
+		let endWithPrefix = "th";
 
 		if (this.fired % 10 === 0 && this.fired % 100 !== 0) {
 			//@ts-ignore
@@ -28,7 +28,7 @@ export class RocketComponent {
 				title: `
         You are the one who fired the ${this.fired}${endWithPrefix} rocket! 
         Congratulations!🎊`,
-				icon: 'success'
+				icon: "success"
 			});
 		} else if (this.fired % 100 === 0) {
 			//@ts-ignore
@@ -38,18 +38,18 @@ export class RocketComponent {
         Congratulations!🎊
         Show @amex2189 a screencap of this screen and see.
         `,
-				icon: 'success'
+				icon: "success"
 			});
 		}
 	}
 
 	ngOnInit() {
 		// @ts-ignore
-		if (typeof window === 'undefined' || window._after_fried_get === 'end') {
+		if (typeof window === "undefined" || window._after_fried_get === "end") {
 			// @ts-ignore
-			if (typeof windo !== 'undefined') {
+			if (typeof windo !== "undefined") {
 				// @ts-ignore
-				if (typeof window.fried == 'number') {
+				if (typeof window.fried == "number") {
 					// @ts-ignore
 					this.fired = window.fried + 1;
 					this.firing();
@@ -78,18 +78,18 @@ export class RocketComponent {
       `)();
 		}
 
-		fetch('/model/get-fly?key=' + Math.random().toString(16), {})
+		fetch("/model/get-fly?key=" + Math.random().toString(16), {})
 			.then(res => res.json())
 			.then(d => {
-				if (parseInt(d.data).toString() === 'NaN') {
+				if (parseInt(d.data).toString() === "NaN") {
 					this.fired = parseInt(Date.now().toString().slice(-5));
 				} else {
 					this.fired = parseInt(d.data);
-					fetch('/model/post-fly?key=' + Math.random().toString(16)).then(() => {
+					fetch("/model/post-fly?key=" + Math.random().toString(16)).then(() => {
 						this.fired++;
 					});
 
-					fetch('model/zenn-likes?key=' + Math.random().toString(16))
+					fetch("model/zenn-likes?key=" + Math.random().toString(16))
 						.then(res => res.json())
 						.then(data => {
 							this.fired += data.likes;
@@ -99,7 +99,7 @@ export class RocketComponent {
 						});
 
 					//@ts-ignore
-					window._after_fried_get = 'end';
+					window._after_fried_get = "end";
 				}
 			});
 	}

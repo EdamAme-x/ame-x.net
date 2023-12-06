@@ -1,9 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input } from "@angular/core";
 
 @Component({
-	selector: 'IconAtom',
-	templateUrl: './atom.component.html',
-	styleUrls: ['./atom.component.scss']
+	selector: "IconAtom",
+	templateUrl: "./atom.component.html",
+	styleUrls: ["./atom.component.scss"]
 })
 export class AtomComponent {
 	@Input() point: string | undefined;

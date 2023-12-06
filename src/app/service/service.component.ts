@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Component } from "@angular/core";
+import { Title } from "@angular/platform-browser";
 
 async function getRepos(username: string, specificRepos: string[]) {
-	let repos = JSON.parse(localStorage.getItem('repos') as string);
+	let repos = JSON.parse(localStorage.getItem("repos") as string);
 
 	const now = Date.now();
-	const expiry = localStorage.getItem('expiry') as string;
+	const expiry = localStorage.getItem("expiry") as string;
 
 	if (!repos || now > parseInt(expiry)) {
 		const response = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
@@ -24,46 +24,46 @@ async function getRepos(username: string, specificRepos: string[]) {
 
 		repos = [...topStarredRepos, ...recentlyUpdatedRepos, ...specificRepoData];
 
-		localStorage.setItem('repos', JSON.stringify(repos));
-		localStorage.setItem('expiry', (now + 12 * 60 * 60 * 1000).toString());
+		localStorage.setItem("repos", JSON.stringify(repos));
+		localStorage.setItem("expiry", (now + 12 * 60 * 60 * 1000).toString());
 	}
 
 	const pinnedRepo = [
 		{
-			name: 'Naxt.js',
-			description: 'Framework using Hono 🔥 x HTMX </> | Ultrafast',
-			stargazers_count: '26',
-			html_url: 'https://github.com/EdamAme-x/Naxt.js'
+			name: "Naxt.js",
+			description: "Framework using Hono 🔥 x HTMX </> | Ultrafast",
+			stargazers_count: "26",
+			html_url: "https://github.com/EdamAme-x/Naxt.js"
 		},
 		{
-			name: 'Hono',
-			description: 'Fast, Lightweight, Web-standards',
-			stargazers_count: '9 k',
-			html_url: 'https://github.com/honojs/hono'
+			name: "Hono",
+			description: "Fast, Lightweight, Web-standards",
+			stargazers_count: "9 k",
+			html_url: "https://github.com/honojs/hono"
 		},
 		{
-			name: 'line-tool-box',
-			description: 'lineで使えるWebツール集',
-			stargazers_count: '7',
-			html_url: 'https://github.com/EdamAme-x/line-tool-box'
+			name: "line-tool-box",
+			description: "lineで使えるWebツール集",
+			stargazers_count: "7",
+			html_url: "https://github.com/EdamAme-x/line-tool-box"
 		},
 		{
-			name: 'Misskey',
-			description: '🌎 An interplanetary microblogging platform 🚀',
-			stargazers_count: '9 k',
-			html_url: 'https://github.com/misskey-dev/misskey'
+			name: "Misskey",
+			description: "🌎 An interplanetary microblogging platform 🚀",
+			stargazers_count: "9 k",
+			html_url: "https://github.com/misskey-dev/misskey"
 		},
 		{
-			name: 'tokutei-v3',
-			description: '次世代特定ツール',
-			stargazers_count: '11',
-			html_url: 'https://github.com/EdamAme-x/tokutei-v3'
+			name: "tokutei-v3",
+			description: "次世代特定ツール",
+			stargazers_count: "11",
+			html_url: "https://github.com/EdamAme-x/tokutei-v3"
 		},
 		{
-			name: 'nozoki',
-			description: 'オプを権限無しで覗けるツール',
-			stargazers_count: '10',
-			html_url: 'https://github.com/EdamAme-x/nozoki'
+			name: "nozoki",
+			description: "オプを権限無しで覗けるツール",
+			stargazers_count: "10",
+			html_url: "https://github.com/EdamAme-x/nozoki"
 		}
 	];
 
@@ -71,16 +71,16 @@ async function getRepos(username: string, specificRepos: string[]) {
 }
 
 @Component({
-	selector: 'app-service',
-	templateUrl: './service.component.html',
-	styleUrls: ['./service.component.scss']
+	selector: "app-service",
+	templateUrl: "./service.component.html",
+	styleUrls: ["./service.component.scss"]
 })
 export class ServiceComponent {
 	contributedRepos: any[] = [
 		{
-			name: 'Loading...',
-			description: 'Loading...',
-			html_url: '#',
+			name: "Loading...",
+			description: "Loading...",
+			html_url: "#",
 			stargazers_count: 999
 		}
 	];
@@ -88,17 +88,17 @@ export class ServiceComponent {
 	constructor(private titleService: Title) {}
 
 	ngOnInit() {
-		this.titleService.setTitle('Ame_x SERVICE & WORKS');
+		this.titleService.setTitle("Ame_x SERVICE & WORKS");
 
-		if (typeof window === 'undefined') {
+		if (typeof window === "undefined") {
 			return;
 		}
 
-		getRepos('EdamAme-x', []).then(repos => {
+		getRepos("EdamAme-x", []).then(repos => {
 			repos.pop();
 			this.contributedRepos = repos.map((repo: any) => {
 				if (repo.description === null) {
-					repo.description = 'No description';
+					repo.description = "No description";
 				}
 				return repo;
 			});
@@ -106,8 +106,8 @@ export class ServiceComponent {
 	}
 
 	deleteCache(): void {
-		localStorage.removeItem('repos');
-		localStorage.removeItem('expiry');
+		localStorage.removeItem("repos");
+		localStorage.removeItem("expiry");
 
 		this.ngOnInit();
 	}

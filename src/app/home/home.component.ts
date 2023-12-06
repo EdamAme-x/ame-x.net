@@ -1,20 +1,20 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-	selector: 'Home',
-	templateUrl: './home.component.html',
-	styleUrls: ['./home.component.scss']
+	selector: "Home",
+	templateUrl: "./home.component.html",
+	styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent {
 	cpuUsage: number = 0;
 	memUsage: number = 0;
 
 	ngOnInit() {
-		if (typeof window == 'undefined') {
+		if (typeof window == "undefined") {
 			return;
 		}
 
-		fetch('/model/usage')
+		fetch("/model/usage")
 			.then(res => res.json())
 			.then(d => {
 				this.cpuUsage = d.cpu / 10000;

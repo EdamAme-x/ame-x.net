@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Component } from "@angular/core";
+import { trigger, state, style, animate, transition } from "@angular/animations";
 
 @Component({
-	selector: 'LayoutHeader',
-	templateUrl: './header.component.html',
-	styleUrls: ['./header.component.scss'],
+	selector: "LayoutHeader",
+	templateUrl: "./header.component.html",
+	styleUrls: ["./header.component.scss"],
 	animations: [
-		trigger('fadeInOut', [
-			state('void', style({ opacity: 0 })),
+		trigger("fadeInOut", [
+			state("void", style({ opacity: 0 })),
 			// fadein
-			transition(':enter, :leave', [animate('0.15s', style({ opacity: 1 }))])
+			transition(":enter, :leave", [animate("0.15s", style({ opacity: 1 }))])
 		])
 	]
 })
@@ -31,11 +31,11 @@ export class HeaderComponent {
 	}
 
 	ngAfterViewInit() {
-		if (typeof window === 'undefined') {
+		if (typeof window === "undefined") {
 			return;
 		}
 
-		window.addEventListener('scroll', () => {
+		window.addEventListener("scroll", () => {
 			if (window.scrollY > 100) {
 				this.menuOpacity = 0;
 			} else {

@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-	selector: 'LayoutPartsAbility',
-	templateUrl: './ability.component.html',
-	styleUrls: ['./ability.component.scss']
+	selector: "LayoutPartsAbility",
+	templateUrl: "./ability.component.html",
+	styleUrls: ["./ability.component.scss"]
 })
 export class AbilityComponent implements OnInit {
 	toPage(page: string) {
@@ -13,56 +13,56 @@ export class AbilityComponent implements OnInit {
 	Math: any = Math;
 
 	ngOnInit() {
-		if (typeof window === 'undefined') {
+		if (typeof window === "undefined") {
 			return;
 		}
 
 		//@ts-except-error
 		function _0x2c9e() {
 			let $ = [
-				'--opacity: 1; --x: ',
-				'px; --y:',
-				'7342730dWXUeQ',
-				'height',
-				'[cards-raw] .overlay',
-				'card',
-				'target',
-				'11xGdDnL',
-				'width',
-				'observe',
-				'35DDmTCm',
-				'createElement',
-				'outerHTML',
-				'borderBoxSize',
-				'cta',
-				'1GMYVaV',
-				'8006684eswrKb',
-				'div',
-				'13557051nHfeNm',
-				'4KjJRTu',
-				'62736RkDXRg',
-				'inlineSize',
-				'onload',
-				'forEach',
-				'[cards-raw] .cards',
-				'offsetTop',
-				'35873880SVdyed',
-				'currentTarget',
-				'pageY',
-				'[cards-raw] .card',
-				'innerHTML',
-				'style',
-				'.main__cards',
-				'2570882FzJogG',
-				'px;',
-				'add',
-				'children',
-				'querySelector',
-				'append',
-				'8xTmGki',
-				'5144775tyrxJa',
-				'opacity',
-				'blockSize'
+				"--opacity: 1; --x: ",
+				"px; --y:",
+				"7342730dWXUeQ",
+				"height",
+				"[cards-raw] .overlay",
+				"card",
+				"target",
+				"11xGdDnL",
+				"width",
+				"observe",
+				"35DDmTCm",
+				"createElement",
+				"outerHTML",
+				"borderBoxSize",
+				"cta",
+				"1GMYVaV",
+				"8006684eswrKb",
+				"div",
+				"13557051nHfeNm",
+				"4KjJRTu",
+				"62736RkDXRg",
+				"inlineSize",
+				"onload",
+				"forEach",
+				"[cards-raw] .cards",
+				"offsetTop",
+				"35873880SVdyed",
+				"currentTarget",
+				"pageY",
+				"[cards-raw] .card",
+				"innerHTML",
+				"style",
+				".main__cards",
+				"2570882FzJogG",
+				"px;",
+				"add",
+				"children",
+				"querySelector",
+				"append",
+				"8xTmGki",
+				"5144775tyrxJa",
+				"opacity",
+				"blockSize"
 			];
 			return (_0x2c9e = function () {
 				return $;
@@ -95,9 +95,9 @@ export class AbilityComponent implements OnInit {
 							a = $[x(432)][0][x(440)],
 							r = $.borderBoxSize[0][x(461)];
 						t >= 0 &&
-							((_[x(455)][t][x(455)][0][x(450)][x(427)] = a + 'px'),
-							(_[x(455)][t][x(455)][0][x(450)][x(422)] = r + 'px'),
-							(_.children[t][x(455)][0][x(455)][0][x(455)][3].style[x(460)] = '0'));
+							((_[x(455)][t][x(455)][0][x(450)][x(427)] = a + "px"),
+							(_[x(455)][t][x(455)][0][x(450)][x(422)] = r + "px"),
+							(_.children[t][x(455)][0][x(455)][0][x(455)][3].style[x(460)] = "0"));
 					});
 				}),
 				r = x => {
@@ -105,7 +105,7 @@ export class AbilityComponent implements OnInit {
 						c = document[e(430)](e(436));
 					c.classList.add(e(424)), t(c, x), _[e(457)](c), a[e(428)](x);
 				};
-			e[$(442)](r), document.body.addEventListener('pointermove', c);
+			e[$(442)](r), document.body.addEventListener("pointermove", c);
 		}
 		function _0x5937($, x) {
 			let e = _0x2c9e();

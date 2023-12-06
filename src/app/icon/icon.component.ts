@@ -1,8 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
-	selector: 'Icon',
-	templateUrl: './icon.component.html',
+	selector: "Icon",
+	templateUrl: "./icon.component.html",
 	styleUrls: []
 })
 export class IconComponent implements OnInit {
@@ -13,11 +13,11 @@ export class IconComponent implements OnInit {
 
 	ngOnInit() {
 		if (this.size === undefined) {
-			this.size = '100px';
+			this.size = "100px";
 		}
 
 		if (this.type === undefined) {
-			this.type = '50%';
+			this.type = "50%";
 		}
 	}
 }
