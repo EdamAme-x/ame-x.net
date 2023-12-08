@@ -146,7 +146,7 @@ export class SkillService {
 			{
 				name: "Svelte Kit",
 				level: "Reasonably good",
-				icon: "https://api.end2end.tech/preview?id=e26b653f08fd&type=png",
+				icon: "https://www.svgrepo.com/show/354416/svelte-icon.svg",
 				case: "https://github.com/Edamame-x/MarsDDoS"
 			},
 			{
@@ -199,6 +199,12 @@ export class SkillService {
 					invert: "invert-x"
 				},
 				case: "https://github.com/EdamAme-x?tab=repositories&q=fresh&type=&language=&sort="
+			},
+			{
+				name: "Shadcn UI",
+				level: "One's forte",
+				icon: "https://ui.shadcn.com/favicon.ico",
+				case: "https://github.com/nissmick/support-site"
 			},
 			{
 				name: "Twind",
