@@ -14,7 +14,7 @@ interface Skills {
 	[key: string]: Skill[];
 }
 
-// Nest Three Gsap
+// Nest Three Gsap (言語)
 @Injectable({
 	providedIn: "root"
 })
